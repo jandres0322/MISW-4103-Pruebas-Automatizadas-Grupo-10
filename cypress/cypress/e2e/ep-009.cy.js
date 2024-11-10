@@ -1,10 +1,9 @@
 const loginScreen = require("../support/screens/login-screen");
 const dashboardScreen = require("../support/screens/dashboard-screen");
-const listPageScreen = require("../support/screens/list-page-screen");
 const listTagScreen = require("../support/screens/list-tag-screen");
 const createTagScreen = require("../support/screens/create-tag-screen");
 
-describe("EP-008: Crear tag con los campos diligenciados correctamente", () => {
+describe("EP-009: Crear tag con los campos diligenciados correctamente", () => {
   beforeEach(() => {
     cy.log("Ingresando a Ghost");
     cy.visit(Cypress.env("apiUrl"));

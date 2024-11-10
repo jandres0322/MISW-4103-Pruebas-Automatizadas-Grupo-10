@@ -4,5 +4,11 @@
     "description": "This is a test post",
     "tag": "News",
     "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "createPostTitleEmpty": {
+    "title": "(Untitled)",
+    "description": "This is a test post",
+    "tag": "News",
+    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   }
 }

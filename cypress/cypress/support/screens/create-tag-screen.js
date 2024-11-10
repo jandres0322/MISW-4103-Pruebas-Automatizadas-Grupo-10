@@ -6,7 +6,8 @@ class CreateTagScreen {
     slugInput: () => cy.get("#tag-slug"),
     descriptionInput: () => cy.get("#tag-description"),
     saveTagButton: () => cy.get("button[data-test-button='save']"),
-    errorMessage: () => cy.get('.error > .response')
+    errorMessage: () => cy.get('.error > .response'),
+    titleTag: () => cy.get('.gh-canvas-title')
   }
 
   enterName(name) {
@@ -31,6 +32,10 @@ class CreateTagScreen {
 
   validateErrorMessage(message) {
     this.elements.errorMessage().should('contain', message);
+  }
+
+  validateTitleTag(title) {
+    this.elements.titleTag().should('contain', title);
   }
 }
 

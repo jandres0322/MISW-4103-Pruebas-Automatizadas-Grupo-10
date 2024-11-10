@@ -4,7 +4,7 @@ const listPageScreen = require("../support/screens/list-page-screen");
 const listTagScreen = require("../support/screens/list-tag-screen");
 const createTagScreen = require("../support/screens/create-tag-screen");
 
-describe("EP-007: Crear tag con campos invalidos", () => {
+describe("EP-008: Crear tag con los campos diligenciados correctamente", () => {
   beforeEach(() => {
     cy.log("Ingresando a Ghost");
     cy.visit(Cypress.env("apiUrl"));
@@ -22,17 +22,17 @@ describe("EP-007: Crear tag con campos invalidos", () => {
       dashboardScreen.clickListTag();
       listTagScreen.clickCreateNewTag();
 
-      cy.log("WHEN: Creando un tag con campos invalidos");
+      cy.log("WHEN: Creando un tag con campos validos");
       cy.fixture("create-tag").then((data) => {
         
-        createTagScreen.enterName(data.createNameEmpty.name);
-        createTagScreen.enterColor(data.createNameEmpty.color);
-        createTagScreen.enterSlug(data.createNameEmpty.slug);
-        createTagScreen.enterDescription(data.createNameEmpty.description);
+        createTagScreen.enterName(data.createTagValid.name);
+        createTagScreen.enterColor(data.createTagValid.color);
+        createTagScreen.enterSlug(data.createTagValid.slug);
+        createTagScreen.enterDescription(data.createTagValid.description);
         createTagScreen.clickSaveTag();
 
-        cy.log("THEN: Se debe validar el mensaje de error");
-        createTagScreen.validateErrorMessage(data.createNameEmpty.errorMessage);
+        cy.log("THEN: Se debe validar que el tag fue creado correctamente");
+        createTagScreen.validateTitleTag(data.createTagValid.name)
       });
     })
   });

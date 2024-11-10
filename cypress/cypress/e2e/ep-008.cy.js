@@ -31,7 +31,7 @@ describe("EP-008: Crear tag con campo de color invalido", () => {
         createTagScreen.enterDescription(data.createColorInvalid.description);
         createTagScreen.clickSaveTag();
 
-        cy.log("THEN: Se debe validar la creación de la pagina");
+        cy.log("THEN: Se debe validar el mensaje de error");
         createTagScreen.validateErrorMessage(data.createColorInvalid.errorMessage);
       });
     })

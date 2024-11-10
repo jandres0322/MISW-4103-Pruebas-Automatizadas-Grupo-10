@@ -12,5 +12,13 @@
     "password": "123",
     "errorMessage": "Password must be at least 10 characters long.",
     "errorMessageMain": "Please fill out every field correctly to set up your site."
+  },
+  "userInvalidateEmail": {
+    "site": "Parceros",
+    "name": "Diego Fernando Acosta",
+    "email": "dacostaortiz",
+    "password": "P@rC3r0s12345",
+    "errorMessage": "Invalid Email.",
+    "errorMessageMain": "Please fill out every field correctly to set up your site."
   }
 }

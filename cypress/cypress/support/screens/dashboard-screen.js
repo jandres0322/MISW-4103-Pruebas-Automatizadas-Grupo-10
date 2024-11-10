@@ -3,7 +3,7 @@ class DashboardScreen {
   elements = {
     titleSite: () => cy.get(".gh-nav-menu-details-sitetitle"),
     createNewPostButton: () => cy.get("a[title='New post']"),
-    listPageButton: () => cy.get("a[data-test-nav='pages']"),
+    listPageButton: () => cy.get('li > a[href="#/pages/"]'),
   }
 
   validateTitleSite(title) {

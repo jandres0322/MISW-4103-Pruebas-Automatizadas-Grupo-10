@@ -1,0 +1,9 @@
+{
+  "createNameEmpty": {
+    "name": " ",
+    "color": "514786",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "slug": "lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit",
+    "errorMessage": "You must specify a name for the tag."
+  }
+}

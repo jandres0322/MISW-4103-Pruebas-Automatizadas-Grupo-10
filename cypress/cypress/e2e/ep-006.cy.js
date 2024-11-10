@@ -17,6 +17,7 @@ describe("EP-006: Crear pagina diligenciado todos los campos correctamente", () 
       loginScreen.clickSubmit();
       dashboardScreen.validateUrlDashboard();
       dashboardScreen.validateTitleSite(data.userLogin.site);
+      cy.wait(2000);
       dashboardScreen.clickListPage();
       listPageScreen.clickCreateNewPage();
 

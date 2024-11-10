@@ -4,6 +4,7 @@ class DashboardScreen {
     titleSite: () => cy.get(".gh-nav-menu-details-sitetitle"),
     createNewPostButton: () => cy.get("a[title='New post']"),
     listPageButton: () => cy.get('li > a[href="#/pages/"]'),
+    listTagButton: () => cy.get('li > a[href="#/tags/"')
   }
 
   validateTitleSite(title) {
@@ -20,6 +21,10 @@ class DashboardScreen {
 
   clickListPage() {
     this.elements.listPageButton().click();
+  }
+
+  clickListTag() {
+    this.elements.listTagButton().click();
   }
 }
 

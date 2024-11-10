@@ -17,6 +17,7 @@ describe("EP-005: Crear pagina sin agregar el titulo de la pagina", () => {
       loginScreen.clickSubmit();
       dashboardScreen.validateUrlDashboard();
       dashboardScreen.validateTitleSite(data.userLogin.site);
+      cy.wait(2000);
       dashboardScreen.clickListPage();
       listPageScreen.clickCreateNewPage();
 

@@ -11,7 +11,8 @@ class CreatePostScreen {
     selectScheduledButton: () => cy.get('.gh-radio').contains('label', 'Schedule for later'),
     finalReviewButton:() => cy.get('.gh-publish-cta > .gh-btn > span'),
     confirmCreatePostButon: () => cy.get('div.gh-publish-cta > button.gh-btn-pulse'),
-    closeModalButton: () => cy.get("button[data-test-button='close-publish-flow']")
+    closeModalButton: () => cy.get("button[data-test-button='close-publish-flow']"),
+    uploadImageButton: () => cy.get('.gh-editor-feature-image-add-button')
   }
 
   enterTitlePost(title) {
@@ -57,6 +58,10 @@ class CreatePostScreen {
 
   clickCloseModal() {
     this.elements.closeModalButton().click();
+  }
+
+  clickUploadImage() {
+    this.elements.uploadImageButton().click();
   }
 }
 

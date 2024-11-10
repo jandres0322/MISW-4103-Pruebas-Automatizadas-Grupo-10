@@ -15,8 +15,6 @@ Scenario: Ingreso a la aplicación y creo un post
     #Create post
     When I click on create post
         And I wait for 1 seconds
-        And I click on write title
-        And I enter text "$name_1"
         And I click on div Begin
         And I enter text "$name_1"
         And I wait for 1 seconds

@@ -24,4 +24,5 @@ Scenario: Crear cuenta en Ghost con correo electronico invalido
     And I click save member
     And I wait for 7 seconds
   Then I should see the error message "Invalid Email."
+    And I wait for 5 seconds
     

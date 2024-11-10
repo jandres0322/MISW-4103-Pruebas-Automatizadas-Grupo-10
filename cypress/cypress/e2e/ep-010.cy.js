@@ -33,7 +33,7 @@ describe("EP-010: Escribir un post sin agregar el titulo del post", () => {
         createPostScreen.clickConfirmCreatePost();
         createPostScreen.clickCloseModal();
 
-        cy.log("THEN: Se debe validar que el post se encuentre listado en los programados");
+        cy.log("THEN:  Se debe validar el titulo vacio del post");
         listPostScreen.validateTitleListPage(data.createPostTitleEmpty.title);
       });
     })

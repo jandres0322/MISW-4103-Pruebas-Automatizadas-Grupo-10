@@ -1,9 +1,10 @@
 const loginScreen = require("../support/screens/login-screen");
 const dashboardScreen = require("../support/screens/dashboard-screen");
 const createPostScreen = require("../support/screens/create-post-screen");
-const listPostScheduledScreen = require("../support/screens/list-post-scheduled-screen");
+const listPostScreen = require("../support/screens/list-post-screen");
 
-describe("EP-011: Escribir un post con todos los campos diligenciados pero programado", () => {
+
+describe("EP-010: Crear un post con todos los campos diligenciados", () => {
   beforeEach(() => {
     cy.log("Ingresando a Ghost");
     cy.visit(Cypress.env("apiUrl"));
@@ -20,7 +21,7 @@ describe("EP-011: Escribir un post con todos los campos diligenciados pero progr
       cy.wait(2000);
       dashboardScreen.clickCreateNewPost();
 
-      cy.log("WHEN: Escribiendo un post con todos los campos diligenciados pero programado");
+      cy.log("WHEN: Escribiendo un post con todos los campos diligenciados");
       cy.fixture("create-post").then((data) => {
         createPostScreen.enterTitlePost(data.createPostValid.title);
         createPostScreen.enterDescriptionPost(data.createPostValid.description);
@@ -29,16 +30,12 @@ describe("EP-011: Escribir un post con todos los campos diligenciados pero progr
         createPostScreen.selectTag(data.createPostValid.tag);
         createPostScreen.clickPageSettings();
         createPostScreen.clickPublish();
-        createPostScreen.clickScheduledDropdown();
-        createPostScreen.clickSelectScheduled();
         createPostScreen.clickFinalReview();
         createPostScreen.clickConfirmCreatePost();
         createPostScreen.clickCloseModal();
 
-        cy.log("THEN: Se debe validar que el post se encuentre listado en los programados");
-          dashboardScreen.clickListPostScheduled();
-          listPostScheduledScreen.validateTitleListPost(data.createPostValid.title);
-          listPostScheduledScreen.validateScheduledTextPost();
+        cy.log("THEN: Se debe validar que el post se haya creado correctamente");
+        listPostScreen.validateTitleListPage(data.createPostValid.title);
       });
     })
   });

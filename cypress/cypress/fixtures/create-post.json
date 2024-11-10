@@ -1,5 +1,5 @@
 {
-  "createPostSchedule": {
+  "createPostValid": {
     "title": "Cypress Test",
     "description": "This is a test post",
     "tag": "News",

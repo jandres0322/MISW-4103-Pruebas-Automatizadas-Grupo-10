@@ -1,3 +1,4 @@
+const assert = require('assert');
 class MembersPage {
     constructor(driver) {
         this.driver = driver;
@@ -31,6 +32,14 @@ class MembersPage {
     async clickSaveMember() {
         const element = await this.driver.$('[data-test-button="save"]');
         await element.click();
+    }
+
+    async getMensaje(mensaje) {
+        const errorMessageElement = await this.driver.$('.error .response');
+        await errorMessageElement.waitForDisplayed({ timeout: 10000 });
+    
+        const errorMessageText = await errorMessageElement.getText();
+        assert.strictEqual(errorMessageText, mensaje, 'El mensaje de error no es el esperado.');
     }
 }
 module.exports = MembersPage;

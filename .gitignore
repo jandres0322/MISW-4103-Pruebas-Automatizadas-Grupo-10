@@ -1,9 +1,10 @@
 # Node.js dependencies
 node_modules/
-.kraken/
+kraken/node_modules/
+kraken/.kraken/
 # Kraken output
-reports/
-screenshots/
+kraken/reports/
+kraken/screenshots/
 
 # Logs
 *.log

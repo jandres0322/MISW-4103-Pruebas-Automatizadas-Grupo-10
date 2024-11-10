@@ -1,7 +1,7 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const MembersPage = require('../page_objects/MembersPage');
 const { faker } = require('@faker-js/faker');
-const assert = require('assert');
+
 
 When('I click Members', async function() {
     const membersPage = new MembersPage(this.driver);
@@ -57,11 +57,9 @@ Then('I should see the Created message with the date', async function () {
 });
 
 
-Then('I should see the error message "Invalid Email."', async function () {
-    const errorMessageElement = await this.driver.$('.error .response');
-    await errorMessageElement.waitForDisplayed({ timeout: 10000 });
+Then('I should see the error message {kraken-string}', async function (mensaje) {
 
-    const errorMessageText = await errorMessageElement.getText();
-    assert.strictEqual(errorMessageText, 'Invalid Email.', 'El mensaje de error no es el esperado.');
+    const membersPage = new MembersPage(this.driver);
+    await membersPage.getMensaje(mensaje);
     
 });

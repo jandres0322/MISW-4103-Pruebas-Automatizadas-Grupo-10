@@ -39,7 +39,16 @@ Este proyecto utiliza **Kraken** para realizar pruebas automatizadas en la aplic
    http://localhost:2368/ghost/
    ```
 2. **Ejecutar pruebas**
+
+   Abrir el archivos properties.json y cambiar las credenciales: url, username y password según haya configurado el ambiente.
+
    Para ejecutar las pruebas con Kraken, utiliza el siguiente comando en tu terminal gtibash:
   ```bash
    ./node_modules/kraken-node/bin/kraken-node run
+   ```
+
+   Ejecutar los escenarios de forma individual de la siguiente manera: 
+
+   ```bash
+   ./node_modules/kraken-node/bin/kraken-node run EP-001-Crear-Cuenta.feature --properties=properties.json
    ```

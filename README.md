@@ -42,7 +42,7 @@ Este proyecto utiliza **Kraken** para realizar pruebas automatizadas en la aplic
 
    Abrir el archivos properties.json y cambiar las credenciales: url, username y password según haya configurado el ambiente.
 
-   Para ejecutar las pruebas con Kraken, utiliza el siguiente comando en tu terminal gtibash:
+   Para ejecutar las pruebas con Kraken, utiliza el siguiente comando en tu terminal gitbash:
   ```bash
    ./node_modules/kraken-node/bin/kraken-node run
    ```

@@ -20,5 +20,8 @@
     "password": "P@rC3r0s12345",
     "errorMessage": "Invalid Email.",
     "errorMessageMain": "Please fill out every field correctly to set up your site."
+  },
+  "userEmptyFields": {
+    "errorMessageMain": "Please fill out every field correctly to set up your site."
   }
 }

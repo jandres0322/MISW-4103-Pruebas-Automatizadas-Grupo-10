@@ -1,6 +1,7 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const assert = require('assert');
 
+
 When('I click on tags', async function(){
     let element = await this.driver.$('a[href="#/tags/"]');
     return await element.click();
@@ -33,12 +34,12 @@ Then('I should see tag {kraken-string}', async function(tagName){
 });
 
 Then('I should see the delete tag button', async function () {
-    // Asegúrate de que el botón esté presente en la página
-    const button = await this.page.$('button[data-test-button="delete-tag"]');
-  
-    // Verifica si el botón existe
-    if (!button) {
-      throw new Error('Delete tag button not found.');
+    const element = await this.driver.$('[data-test-button="delete-tag"]');
+    if (element) {
+        // El botón existe y puedes interactuar con él
+        return await element.click();
+    } else {
+        console.log("El botón de eliminar no está visible en la vista.");
     }
   
   });

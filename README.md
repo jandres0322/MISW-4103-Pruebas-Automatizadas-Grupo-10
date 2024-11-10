@@ -52,3 +52,10 @@ Este proyecto utiliza **Kraken** para realizar pruebas automatizadas en la aplic
    ```bash
    ./node_modules/kraken-node/bin/kraken-node run EP-001-Crear-Cuenta.feature --properties=properties.json
    ```
+
+   Manejo de Características Ejecutadas
+   
+   Algunas características ya han sido ejecutadas y se encuentran en la carpeta `featuresEjecutados`. Si deseas volver a ejecutar o probar características específicas, simplemente muévelas a la carpeta `features`.
+   
+   1. **Mover el Archivo de Característica**: Copia o mueve el archivo `.feature` que deseas probar desde la carpeta `featuresEjecutados` a la carpeta `features`.
+   2. **Ejecutar la Prueba**: Una vez que la característica esté en la carpeta `features`, puedes ejecutarla con el comando mencionado arriba.

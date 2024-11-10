@@ -25,6 +25,7 @@ Scenario: Crear tag con los campos diligenciados correctamente
         And I enter text "$string"
         And I wait for 1 seconds
         And I click on save
+        And I wait for 5 seconds
 
     #Confirm tag
     Then I should see the delete tag button

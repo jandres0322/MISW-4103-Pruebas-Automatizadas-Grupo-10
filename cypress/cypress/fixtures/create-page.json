@@ -1,7 +1,8 @@
 {
-  "createPage": {
-    "title": "Lorem Ipsum",
+  "createPageTitleEmpty": {
+    "titleEmpty": "(Untitled)",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    "tag": "News"
+    "tag": "News",
+    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   }
 }

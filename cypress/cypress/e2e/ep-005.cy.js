@@ -22,9 +22,18 @@ describe("EP-005: Crear pagina sin agregar el titulo de la pagina", () => {
 
       cy.log("WHEN: Creando una pagina sin agregar el titulo de la pagina");
       cy.fixture("create-page").then((data) => {
-        createPageScreen.enterDescriptionPage(data.createPage.description);
+        createPageScreen.enterDescriptionPage(data.createPageTitleEmpty.description);
         createPageScreen.clickPageSettings();
-        createPageScreen.selectTag(data.createPage.tag)
+        createPageScreen.selectTag(data.createPageTitleEmpty.tag);
+        createPageScreen.enterExcerptPage(data.createPageTitleEmpty.excerpt);
+        createPageScreen.clickPageSettings();
+        createPageScreen.clickPublish(); 
+        createPageScreen.clickFinalReview();
+        createPageScreen.clickConfirmCreatePage();
+        createPageScreen.clickCloseModal();
+
+        cy.log("THEN: Se debe validar el titulo vacio de la pagina");
+        listPageScreen.validateTitleListPage(data.createPageTitleEmpty.titleEmpty);
       });
     })
   });

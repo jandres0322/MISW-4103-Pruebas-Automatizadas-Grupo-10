@@ -6,6 +6,7 @@ class CreateMemberScreen {
     noteMemberInput: () => cy.get('#member-note'),
     saveMemberButton: () => cy.get('.view-actions > button[data-test-button="save"]'),
     messageError: () => cy.get('.error > .response'),
+    titleNameText: () => cy.get('.gh-canvas-title')
   }
 
   enterNameMember(name) {
@@ -30,6 +31,10 @@ class CreateMemberScreen {
 
   validateButtonError() {
     this.elements.saveMemberButton().should("contain.text", "Retry");
+  }
+
+  validateNameCreatedText(title) {
+    this.elements.titleNameText().should("contain.text", title);
   }
 }
 

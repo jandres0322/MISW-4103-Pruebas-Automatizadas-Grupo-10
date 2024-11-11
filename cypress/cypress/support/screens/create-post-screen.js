@@ -70,6 +70,7 @@ class CreatePostScreen {
     this.elements.closeModalButton().click();
   }
 
+<<<<<<< HEAD
   clickUpdatePost() {
     this.elements.updatePostButton().click();
   }
@@ -84,6 +85,10 @@ class CreatePostScreen {
     this.elements.selectedImageUnsplash().first().click();
     cy.wait(2000);
     this.elements.chooseImageUnsplashButton().click();
+=======
+  clickUploadImage() {
+    this.elements.uploadImageButton().click();
+>>>>>>> 69eeb774e85c687c523bed1db8027614247e6e7a
   }
 }
 

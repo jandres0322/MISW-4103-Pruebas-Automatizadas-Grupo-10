@@ -6,7 +6,8 @@ class DashboardScreen {
     listPageButton: () => cy.get('li > a[href="#/pages/"]'),
     listTagButton: () => cy.get('li > a[href="#/tags/"'),
     listPostScheduledButton: () => cy.get('li > a[href="#/posts/?type=scheduled"'),
-    listPostButton: () => cy.get('li > a[href="#/posts/"]')
+    listPostButton: () => cy.get('li > a[href="#/posts/"]'),
+    listMemberButton: () => cy.get('li > a[href="#/members/"]')
   }
 
   validateTitleSite(title) {
@@ -35,6 +36,10 @@ class DashboardScreen {
 
   clickListPost() {
     this.elements.listPostButton().click();
+  }
+
+  clickListMember() {
+    this.elements.listMemberButton().click();
   }
 }
 

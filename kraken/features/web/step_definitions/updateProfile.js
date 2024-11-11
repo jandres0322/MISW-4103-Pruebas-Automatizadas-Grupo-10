@@ -25,3 +25,13 @@ When('I click save', async function(){
     const updateProfile = new UpdateProfile(this.driver);
     await updateProfile.clickSave();
 })
+
+Then('I can see the Name is required tag', async function(){
+    await this.driver.pause(5000); 
+    const createdContainer = await this.driver.$("span.mt-1");
+    
+    const isDisplayed = await createdContainer.isDisplayed();
+    if (!isDisplayed) {
+        throw new Error("El mensaje 'Name is required' no está visible en la página.");
+    }
+})

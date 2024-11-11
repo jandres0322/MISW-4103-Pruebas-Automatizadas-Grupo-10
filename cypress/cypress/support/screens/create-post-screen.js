@@ -1,3 +1,6 @@
+const cypressRealEvents = require("cypress-real-events/support");
+
+
 class CreatePostScreen {
   elements = {
     titlePostInput: () => cy.get('textarea[placeholder="Post title"]'),
@@ -11,14 +14,22 @@ class CreatePostScreen {
     selectScheduledButton: () => cy.get('.gh-radio').contains('label', 'Schedule for later'),
     finalReviewButton:() => cy.get('.gh-publish-cta > .gh-btn > span'),
     confirmCreatePostButon: () => cy.get('div.gh-publish-cta > button.gh-btn-pulse'),
-    closeModalButton: () => cy.get("button[data-test-button='close-publish-flow']")
+    closeModalButton: () => cy.get("button[data-test-button='close-publish-flow']"),
+    updatePostButton: () => cy.get('.gh-editor-header > .gh-editor-publish-buttons ').contains('span', 'Update'),
+    backListPostButton: () => cy.get('a[href="#/posts/"]').contains('span', 'Posts'),
+    openImageUnsplashButton: () => cy.get('.gh-editor-feature-image-add  >  .gh-editor-feature-image-unsplash'),
+    searchImageUnsplashInput: () => cy.get('.gh-unsplash-search'),
+    selectedImageUnsplash: () => cy.get('.gh-unsplash-photo'),
+    chooseImageUnsplashButton: () => cy.get('.absolute > .gh-unsplash-photo > .gh-unsplash-photo-container > .gh-unsplash-photo-overlay > .gh-unsplash-photo-footer > .gh-unsplash-button')
   }
 
   enterTitlePost(title) {
+    this.elements.titlePostInput().clear();
     this.elements.titlePostInput().type(title);
   }
 
   enterDescriptionPost(description) {
+    this.elements.descriptionPostInput().clear();
     this.elements.descriptionPostInput().type(description);
   }
 
@@ -57,6 +68,22 @@ class CreatePostScreen {
 
   clickCloseModal() {
     this.elements.closeModalButton().click();
+  }
+
+  clickUpdatePost() {
+    this.elements.updatePostButton().click();
+  }
+
+  clickBackListPost() {
+    this.elements.backListPostButton().click();
+  }
+
+  searchUploadImageUnsplash(image) {
+    this.elements.openImageUnsplashButton().click();
+    this.elements.searchImageUnsplashInput().type(image);
+    this.elements.selectedImageUnsplash().first().click();
+    cy.wait(2000);
+    this.elements.chooseImageUnsplashButton().click();
   }
 }
 

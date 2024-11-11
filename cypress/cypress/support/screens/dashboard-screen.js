@@ -5,7 +5,8 @@ class DashboardScreen {
     createNewPostButton: () => cy.get("a[title='New post']"),
     listPageButton: () => cy.get('li > a[href="#/pages/"]'),
     listTagButton: () => cy.get('li > a[href="#/tags/"'),
-    listPostScheduledButton: () => cy.get('li > a[href="#/posts/?type=scheduled"')
+    listPostScheduledButton: () => cy.get('li > a[href="#/posts/?type=scheduled"'),
+    listPostButton: () => cy.get('li > a[href="#/posts/"]')
   }
 
   validateTitleSite(title) {
@@ -30,6 +31,10 @@ class DashboardScreen {
 
   clickListPostScheduled() {
     this.elements.listPostScheduledButton().click();
+  }
+
+  clickListPost() {
+    this.elements.listPostButton().click();
   }
 }
 

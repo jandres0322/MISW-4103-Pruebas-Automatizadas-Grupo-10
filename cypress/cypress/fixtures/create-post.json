@@ -10,5 +10,16 @@
     "description": "This is a test post",
     "tag": "News",
     "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  },
+  "createPostForEdit": {
+    "title": "Este es un nuevo post para editar",
+    "description": "Este es un post de prueba para editar",
+    "tag": "News",
+    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "titleEdit": "Este es un post editado",
+    "descriptionEdit": "Este es un post de prueba editado",
+    "tagEdit": "News",
+    "excerptEdit": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "imageUnplash": "cookies" 
   }
 }

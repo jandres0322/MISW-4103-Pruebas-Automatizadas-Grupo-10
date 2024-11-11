@@ -2,6 +2,9 @@ const cypressRealEvents = require("cypress-real-events/support");
 
 
 class CreatePostScreen {
+
+  pathImage = "cypress/support/files/image.jpeg";
+
   elements = {
     titlePostInput: () => cy.get('textarea[placeholder="Post title"]'),
     descriptionPostInput: () => cy.get('[data-secondary-instance="false"] > .koenig-lexical > [data-kg="editor"] > .kg-prose > p'),
@@ -20,7 +23,9 @@ class CreatePostScreen {
     openImageUnsplashButton: () => cy.get('.gh-editor-feature-image-add  >  .gh-editor-feature-image-unsplash'),
     searchImageUnsplashInput: () => cy.get('.gh-unsplash-search'),
     selectedImageUnsplash: () => cy.get('.gh-unsplash-photo'),
-    chooseImageUnsplashButton: () => cy.get('.absolute > .gh-unsplash-photo > .gh-unsplash-photo-container > .gh-unsplash-photo-overlay > .gh-unsplash-photo-footer > .gh-unsplash-button')
+    chooseImageUnsplashButton: () => cy.get('.absolute > .gh-unsplash-photo > .gh-unsplash-photo-container > .gh-unsplash-photo-overlay > .gh-unsplash-photo-footer > .gh-unsplash-button'),
+    uploadImageButton: () => cy.get("button").contains("span", "Add feature image"),
+    uploadImageInput: () => cy.get("input[type=file]").invoke("show"),
   }
 
   enterTitlePost(title) {
@@ -84,6 +89,12 @@ class CreatePostScreen {
     this.elements.selectedImageUnsplash().first().click();
     cy.wait(2000);
     this.elements.chooseImageUnsplashButton().click();
+  }
+
+  clickUploadImage() {
+    this.elements.uploadImageButton().click();
+    cy.wait(1000);
+    this.elements.uploadImageInput().selectFile(this.pathImage, { force: true });
   }
 }
 

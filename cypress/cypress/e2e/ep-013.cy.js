@@ -26,17 +26,17 @@ describe("EP-013: Escribir un post con todos los campos diligenciados agregando 
         createPostScreen.enterTitlePost(data.createPostValid.title);
         createPostScreen.enterDescriptionPost(data.createPostValid.description);
         createPostScreen.clickUploadImage();
-        // createPostScreen.clickPageSettings();
-        // createPostScreen.enterExcerptPost(data.createPostValid.excerpt);
-        // createPostScreen.selectTag(data.createPostValid.tag);
-        // createPostScreen.clickPageSettings();
-        // createPostScreen.clickPublish();
-        // createPostScreen.clickFinalReview();
-        // createPostScreen.clickConfirmCreatePost();
-        // createPostScreen.clickCloseModal();
+        createPostScreen.clickPageSettings();
+        createPostScreen.enterExcerptPost(data.createPostValid.excerpt);
+        createPostScreen.selectTag(data.createPostValid.tag);
+        createPostScreen.clickPageSettings();
+        createPostScreen.clickPublish();
+        createPostScreen.clickFinalReview();
+        createPostScreen.clickConfirmCreatePost();
+        createPostScreen.clickCloseModal();
 
         cy.log("THEN: Se debe validar que el post se haya creado correctamente");
-        // listPostScreen.validateTitleListPage(data.createPostValid.title);
+        listPostScreen.validateTitleListPage(data.createPostValid.title);
       });
     })
   });

@@ -10,6 +10,8 @@ class ListMemberScreen {
     confirmImportMemberButton: () => cy.get('.gh-btn-green > span'),
     closeModalImportMemberButton: () => cy.get('.gh-btn-black > span'),
     textImportSuccess: () => cy.get('h1'),
+    createAdminMemberButton: () => cy.get('.gh-members-empty > .gh-btn > span'),
+    nameMemberText: () => cy.get('.gh-members-list-name').first(),
   }
 
   clickCreateNewMember() {
@@ -36,6 +38,14 @@ class ListMemberScreen {
   validateMembersToUpload() {
     this.elements.textImportSuccess().should("contain.text", "Import in progress");
     this.elements.closeModalImportMemberButton().click();
+  }
+
+  clickCreateAdminMember() {
+    this.elements.createAdminMemberButton().click();
+  }
+
+  validateNameMember(name) {
+    this.elements.nameMemberText().should("contain.text", name);
   }
 
 }

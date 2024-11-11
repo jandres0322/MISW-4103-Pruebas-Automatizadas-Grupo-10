@@ -8,5 +8,6 @@
     "EMAILINVALIDO": "correoinvalidogmail.com",
     "NAMEVACIO": "",
     "EMAIVACIO": "",
-    "FULL_NAME": "Luis Antonio Niño Niño"
+    "FULL_NAME": "Luis Antonio Niño Niño",
+    "CLEAN_NAME" : ""
 }

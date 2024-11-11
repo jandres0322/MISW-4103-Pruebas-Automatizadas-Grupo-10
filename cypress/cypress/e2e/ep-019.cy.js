@@ -1,10 +1,9 @@
 const loginScreen = require("../support/screens/login-screen");
 const dashboardScreen = require("../support/screens/dashboard-screen");
 const listMemberScreen = require("../support/screens/list-member-screen");
-const createMemberScreen = require("../support/screens/create-member-screen");
 
 
-describe("EP-020: Crear dos miembros mediante el archivo CSV", () => {
+describe("EP-019: Crear miembros mediante el archivo CSV ingresando en el archivo un correo electronico con formato invalido", () => {
   beforeEach(() => {
     cy.log("Ingresando a Ghost");
     cy.visit(Cypress.env("apiUrl"));
@@ -24,11 +23,11 @@ describe("EP-020: Crear dos miembros mediante el archivo CSV", () => {
       cy.log("WHEN: Importando el archivo CSV para cargar los miembros");
       listMemberScreen.clickSettingListMember();
       listMemberScreen.clickImportMember();
-      listMemberScreen.loadFileCSV();
+      listMemberScreen.loadFileCSV(false);
 
       cy.log("THEN: Validando que los miembros se hayan cargado correctamente");
-      listMemberScreen.validateNumbersMembers(2);
-      listMemberScreen.validateMembersToUpload();
+      listMemberScreen.validateNumbersMembers(1);
+      listMemberScreen.validateErrorMessageImportMember('Please map "Email" to one of the fields in the CSV');
     })
   });
 });

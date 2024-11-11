@@ -1,6 +1,7 @@
 class ListMemberScreen {
 
   pathFileCsv = "cypress/support/files/member-import-template.csv"
+  pahtFileCsvInvalid = "cypress/support/files/member-import-template-invalid.csv"
 
   elements = {
     createNewMemberButton: () => cy.get("a[href='#/members/new/']").contains("span", "New member"),
@@ -12,6 +13,7 @@ class ListMemberScreen {
     textImportSuccess: () => cy.get('h1'),
     createAdminMemberButton: () => cy.get('.gh-members-empty > .gh-btn > span'),
     nameMemberText: () => cy.get('.gh-members-list-name').first(),
+    errorMessageImportMemberText: () => cy.get('.pt2')
   }
 
   clickCreateNewMember() {
@@ -26,12 +28,14 @@ class ListMemberScreen {
     this.elements.importMemberButton().click();
   }
 
-  loadFileCSV() {
-    this.elements.loadFileCsvInput().selectFile(this.pathFileCsv, { force: true });
+  loadFileCSV(validCsv = true) {
+    this.elements.loadFileCsvInput().selectFile(
+      validCsv ? this.pathFileCsv : this.pahtFileCsvInvalid, 
+      { force: true });
   }
 
-  validateNumbersMembers() {
-    this.elements.confirmImportMemberButton().should("contain.text", "2")
+  validateNumbersMembers(number) {
+    this.elements.confirmImportMemberButton().should("contain.text", number)
     this.elements.confirmImportMemberButton().click();
   }
 
@@ -46,6 +50,10 @@ class ListMemberScreen {
 
   validateNameMember(name) {
     this.elements.nameMemberText().should("contain.text", name);
+  }
+
+  validateErrorMessageImportMember(text) {
+    this.elements.errorMessageImportMemberText().should("contain.text", text);
   }
 
 }

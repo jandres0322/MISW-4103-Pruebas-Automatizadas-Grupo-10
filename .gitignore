@@ -1,2 +1,22 @@
-node_modules/
 package-lock.json
+# Node.js dependencies
+node_modules/
+kraken/node_modules/
+kraken/.kraken/
+# Kraken output
+kraken/reports/
+kraken/screenshots/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Environment-specific files (if any)
+.env
+
+# Editor and IDE files
+.vscode/
+.idea/

@@ -1,6 +1,6 @@
 # Node.js dependencies
 node_modules/
-
+.kraken/
 # Kraken output
 reports/
 screenshots/

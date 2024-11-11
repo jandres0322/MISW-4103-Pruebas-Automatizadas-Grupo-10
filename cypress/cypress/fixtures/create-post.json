@@ -21,5 +21,18 @@
     "tagEdit": "News",
     "excerptEdit": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "imageUnplash": "cookies" 
+  },
+  "createPostForEditWithNewTag": {
+    "title": "Este es un nuevo post para editar",
+    "description": "Este es un post de prueba para editar",
+    "tag": "News",
+    "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "titleEdit": "Este es un post editado",
+    "descriptionEdit": "Este es un post de prueba editado",
+    "excerptEdit": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "tagName": "Software Development",
+    "tagColor": "514786",
+    "tagDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "tagSlug": "lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit"
   }
 }

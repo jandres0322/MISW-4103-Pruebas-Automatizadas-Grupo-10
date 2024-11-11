@@ -1,0 +1,22 @@
+{
+  "createNameEmpty": {
+    "name": " ",
+    "color": "514786",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "slug": "lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit",
+    "errorMessage": "You must specify a name for the tag."
+  },
+  "createColorInvalid": {
+    "name": "Tag test",
+    "color": "ASDF",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "slug": "lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit",
+    "errorMessage": "The colour should be in valid hex format"
+  },
+  "createTagValid": {
+    "name": "Tag test",
+    "color": "514786",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "slug": "lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit"
+  }
+}

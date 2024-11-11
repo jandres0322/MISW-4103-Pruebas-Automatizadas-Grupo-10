@@ -1,0 +1,13 @@
+{
+  "createMemberInvalidEmail": {
+    "name": "John Doe",
+    "email": "john.doe",
+    "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus ut libero ultricies lacinia. Nullam nec purus ut libero ultricies lacinia.",
+    "messageError": "Invalid Email"
+  },
+  "createMemberValid": {
+    "name": "John Doe",
+    "email": "john.doe@gmail.com",
+    "note": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus ut libero ultricies lacinia. Nullam nec purus ut libero ultricies lacinia."
+  }
+}

@@ -12,6 +12,17 @@ When('I enter password {kraken-string}', async function (password) {
     await loginPage.enterPassword(password);
 })
 
+
+When('I enter email v2 {kraken-string}', async function (email) {
+    const loginPage = new LoginPage(this.driver);
+    await loginPage.enterEmailV2(email);
+});
+
+When('I enter password v2 {kraken-string}', async function (password) {
+    const loginPage = new LoginPage(this.driver);
+    await loginPage.enterPasswordV2(password);
+})
+
 When('I click next', async function() {
     const loginPage = new LoginPage(this.driver);
     await loginPage.clickNext();

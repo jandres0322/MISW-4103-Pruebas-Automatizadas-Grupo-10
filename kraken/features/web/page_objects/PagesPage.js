@@ -39,6 +39,11 @@ class PagesPage{
         const isDisplayed = await element.isDisplayed();
         return isDisplayed
     }
+
+    async writeTitle(){
+        const element = await this.driver.$('textarea.ember-text-area');
+        await element.setValue("Titulo de la página de Prueba")
+    }
 }
 
 module.exports = PagesPage;

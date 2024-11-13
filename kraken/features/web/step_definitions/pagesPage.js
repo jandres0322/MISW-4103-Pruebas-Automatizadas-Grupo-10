@@ -38,4 +38,17 @@ Then ('I should not see copy link button', async function(){
     }
 })
 
+When ('I write title', async function(){
+    const pagesPage  = new PagesPage(this.driver);
+    await pagesPage.writeTitle()
+})
+
+Then ('I should see copy link button', async function(){
+    const pagesPage  = new PagesPage(this.driver);
+    const isDisplayed = await pagesPage.isDisplayedCopylink();
+    if (isDisplayed==false) {
+        throw new Error("El mensaje 'Boom! It's out there.' deberia estar visible en la página.");
+    }
+})
+
 

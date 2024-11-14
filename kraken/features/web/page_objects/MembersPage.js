@@ -40,6 +40,45 @@ class MembersPage {
     
         const errorMessageText = await errorMessageElement.getText();
         assert.strictEqual(errorMessageText, mensaje, 'El mensaje de error no es el esperado.');
+        
+    }
+
+    
+
+    
+    //VERSIÓN DOS GHOST
+
+    async navigateToMembersV2() {
+        const element = await this.driver.$('a[href="#/members/"]');
+        await element.click();
+    }
+
+    async clickNewMemberV2() {
+        const element = await this.driver.$('a[href="#/members/new/"]');
+        await element.click();
+    }
+
+    async clickSaveMemberV2() {
+        let saveButton = await this.driver.$('button.gh-btn.gh-btn-primary.gh-btn-icon');
+    
+    // Verifica que el botón contenga el texto "Save" para asegurarse de que es el correcto
+        let buttonText = await saveButton.getText();
+        if (buttonText === "Save") {
+            await saveButton.click();
+        } else {
+            throw new Error("Botón 'Save' no encontrado");
+        }
+    }
+
+    async getMensajeV2(mensaje) {
+
+        const mensajeErrorElemento = await this.driver.$('div.form-group.error p.response');
+
+        // Obtiene el texto del elemento
+        let errorMessage = await mensajeErrorElemento.getText();
+        console.log("Mensaje de error obtenido:", errorMessage);
+        // Compara el texto obtenido con el mensaje esperado
+        assert.strictEqual(errorMessage, mensaje, 'El mensaje de error no es el esperado.');
     }
 }
 module.exports = MembersPage;

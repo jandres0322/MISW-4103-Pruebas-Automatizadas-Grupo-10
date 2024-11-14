@@ -63,3 +63,29 @@ Then('I should see the error message {kraken-string}', async function (mensaje) 
     await membersPage.getMensaje(mensaje);
     
 });
+
+
+
+//VERSIÓN DOS GHOST
+
+When('I click Members v2', async function() {
+    const membersPage = new MembersPage(this.driver);
+    await membersPage.navigateToMembersV2();
+});
+
+When('I click New Members v2', async function() {
+    const membersPage = new MembersPage(this.driver);
+    await membersPage.clickNewMemberV2();
+})
+
+When('I click save member v2', async function() {
+    const membersPage = new MembersPage(this.driver);
+    await membersPage.clickSaveMemberV2();
+})
+
+Then('I should see the error message v2 {kraken-string}', async function (mensaje) {
+
+    const membersPage = new MembersPage(this.driver);
+    await membersPage.getMensajeV2(mensaje);
+    
+});

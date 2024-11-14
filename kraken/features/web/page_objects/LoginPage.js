@@ -14,23 +14,28 @@ class LoginPage {
     }
 
     async enterEmailV2(email) {
-        // Espera a que el campo en la sección específica esté presente y visible
-        const sectionField = await this.driver.$('section.gh-portal-input-section input#input-name');
-        await sectionField.waitForExist({ timeout: 5000 });
-        await sectionField.waitForDisplayed({ timeout: 5000 });
-
-        // Establece el valor en el campo de nombre
-        await sectionField.setValue(email);
+        const element = await this.driver.$('[name="identification"]');
+        await element.setValue(email);
     }
+    
 
     async enterPasswordV2(password) {
-        const emailField = await this.driver.$('section.gh-portal-input-section input#input-email');
-        await emailField.waitForExist({ timeout: 5000 });
-        await emailField.setValue(password);
+        const element = await this.driver.$('[name="password"]');
+        await element.setValue(password);
     }
 
     async clickNext() {
         const element = await this.driver.$('#ember5');
+        await element.click();
+    }
+
+    async clickNextV2() {
+        const element = await this.driver.$(".login.gh-btn.gh-btn-login");
+        await element.click();
+    }
+
+    async clickSubscribe() {
+        const element = await this.driver.$('.gh-portal-triggerbtn-container');
         await element.click();
     }
 

@@ -12,18 +12,31 @@ When('I enter password {kraken-string}', async function (password) {
     await loginPage.enterPassword(password);
 })
 
-
-When('I enter email v2 {kraken-string}', async function (email) {
+When('I click next', async function() {
     const loginPage = new LoginPage(this.driver);
-    await loginPage.enterEmailV2(email);
-});
+    await loginPage.clickNext();
+})
+
+
+When('I click subscribe', async function() {
+    const loginPage = new LoginPage(this.driver);
+    await loginPage.clickSubscribe();
+})
+
+
+//VERSIÓN DOS GHOST
 
 When('I enter password v2 {kraken-string}', async function (password) {
     const loginPage = new LoginPage(this.driver);
     await loginPage.enterPasswordV2(password);
 })
 
-When('I click next', async function() {
+When('I click next v2', async function() {
     const loginPage = new LoginPage(this.driver);
-    await loginPage.clickNext();
+    await loginPage.clickNextV2();
 })
+
+When('I enter email v2 {kraken-string}', async function (email) {
+    const loginPage = new LoginPage(this.driver);
+    await loginPage.enterEmailV2(email);
+});

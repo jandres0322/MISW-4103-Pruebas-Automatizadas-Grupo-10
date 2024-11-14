@@ -51,4 +51,14 @@ Then ('I should see copy link button', async function(){
     }
 })
 
+When('I write the post title', async function(){
+    const postsPages = new PagesPage(this.driver);
+    await postsPages.writeTitlePost();
+})
+
+When('I write the body of the post', async function(){
+    const postsPages = new PagesPage(this.driver);
+    await postsPages.writePost();
+})
+
 

@@ -44,6 +44,21 @@ class PagesPage{
         const element = await this.driver.$('textarea.ember-text-area');
         await element.setValue("Titulo de la página de Prueba")
     }
+
+    async writeTitlePost(){
+        const element = await this.driver.$('textarea.ember-text-area');
+        await element.setValue("Prueba Automatizada");
+    }
+
+    async writePost(){
+        const element = await this.driver.$('div.kg-prose');
+        await element.setValue( "Las pruebas automatizadas consisten en la aplicación de herramientas de software"+
+                                " para automatizar el proceso manual de revisión y validación de un producto de "+
+                                "software que lleva a cabo una persona. Ahora, la mayoría de los proyectos de software "+
+                                "ágiles y de DevOps modernos incluyen pruebas automatizadas desde el principio; "+
+                                "sin embargo, para apreciar plenamente el valor de dichas pruebas, hay que saber cómo"+
+                                "era la vida antes de que se adoptaran de forma generalizada.")
+    }
 }
 
 module.exports = PagesPage;

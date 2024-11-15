@@ -89,3 +89,18 @@ Then('I should see the error message v2 {kraken-string}', async function (mensaj
     await membersPage.getMensajeV2(mensaje);
     
 });
+
+Then('I see the signup info message {kraken-string}', async function(mensaje) {
+
+    const membersPage = new MembersPage(this.driver);
+    await membersPage.getMensajeSignupV2(mensaje);
+    
+});
+
+Then('I see the Delete member button', async function() {
+
+    const membersPage = new MembersPage(this.driver);
+    await membersPage.getVerificaButtonDelete();
+
+    
+});

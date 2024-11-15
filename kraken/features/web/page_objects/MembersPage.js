@@ -80,5 +80,24 @@ class MembersPage {
         // Compara el texto obtenido con el mensaje esperado
         assert.strictEqual(errorMessage, mensaje, 'El mensaje de error no es el esperado.');
     }
+
+    async getMensajeSignupV2(mensaje) {
+
+        // Selecciona el elemento por su clase y obtiene el texto
+        const errorMessage = await this.driver.$('.gh-main-section-header.small.bn').getText();
+        console.log("Mensaje de error obtenido ----------:", errorMessage);
+        // Verifica que el texto sea el esperado (puedes ajustar "Expected Message" a tu necesidad)
+        assert.strictEqual(errorMessage, mensaje, 'El mensaje de error no es el esperado.');
+    }
+
+    async getVerificaButtonDelete() {
+
+        // Busca el botón por su clase
+        const deleteButton = await this.driver.$('.gh-btn.gh-btn-red.gh-btn-icon');
+        
+        // Verifica si el botón está en la vista
+        const isDisplayed = await deleteButton.isDisplayed();
+        assert.strictEqual(isDisplayed, true, "El botón 'Delete member' no está visible en la vista");
+    }
 }
 module.exports = MembersPage;

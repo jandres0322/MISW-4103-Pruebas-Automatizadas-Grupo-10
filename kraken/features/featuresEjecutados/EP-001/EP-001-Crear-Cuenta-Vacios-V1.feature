@@ -3,7 +3,7 @@ Feature: Crear Cuenta en Ghost
 @EP002 @user1 @web
 Scenario: Crear cuenta en Ghost con campos del registro vacíos
     And I wait for 7 seconds
-  Given I navigate to page "http://localhost:2368/ghost/#/signin"
+  Given I navigate to page "<URL>"
     And I wait for 5 seconds
     And I enter email "<USERNAME1>"
     And I wait for 2 seconds

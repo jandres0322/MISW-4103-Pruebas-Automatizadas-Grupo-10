@@ -30,6 +30,6 @@ Scenario: Crear cuenta en Ghost con los campos diligenciados correctamente
     And I take one screenshot "./artefacts/version2/EP004/field_members.png"
   Then I see the Delete member button
     And I wait for 5 seconds 
-    And I take one screenshot "./artefacts/version2/EP004/menj_error_members.png"
+    And I take one screenshot "./artefacts/version2/EP004/menj_members.png"
   
 

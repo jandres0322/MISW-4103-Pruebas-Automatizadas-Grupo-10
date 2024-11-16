@@ -3,7 +3,7 @@ const fs = require('fs-extra');
 
 
 const basePath = '../kraken/artefacts';
-const scenarios = ['EP001', 'EP002', 'EP004']; 
+const scenarios = ['EP001', 'EP002', 'EP004', 'EP005']; 
 const versions = ['version1', 'version2']; 
 const reportFilePath = `${basePath}/diff/report.html`; 
 

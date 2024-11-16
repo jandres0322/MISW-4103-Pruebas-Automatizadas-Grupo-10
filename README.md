@@ -115,6 +115,19 @@ Se visualzará:
 
 ![image](https://github.com/user-attachments/assets/d7d0a7d3-684a-4add-9386-aa6c6a8a615e)
 
+En la raiz del repositorio se encuentra la capeta ResembleJs, esta carpeta contiene el reporte en formato Html comparison_report. ResembleJs/comparison_report.html.
+
+Para generar el reporte debe seguir lso siguientes pasos:
+
+Navegar al path /ResembleJs desde la raiz del repositorio
+ejecutar npm ci
+ejecutar npm run start
+Esto generará el reporte nuevamente.
+
+Nota: para generar un reporte con datos actualizados debe haber previamente ejecutado kraken y kraken510
+
+El script buscará las imágenes generadas por kraken de manera recursiva dentro de las carpetas ./Kraken/artefacts/version1 y ./Kraken/artefacts/version2,  con base en dichas imagenes generará la comparacián y el reporte.
+
 
  
 

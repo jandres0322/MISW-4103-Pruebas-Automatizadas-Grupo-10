@@ -19,8 +19,24 @@ class PagesPage{
         "The reason you're getting the Uncaught ReferenceError: ms is not defined error is because modules are scoped, and since youre loading the library using native modules, ms is not in the global scope and is therefore not accessible in the following script tag."+"It looks like you should be able to load the dist version of this file to have ms defined on the window. Check out this example from the library author to see an example of how this can be done.")
     }
 
+    async writePageV2(){
+        const element = await this.driver.$('div.koenig-editor__editor');
+        await element.setValue("You're currently loading the source file in the src directory instead of the built file in the dist directory (you can see what the intended distributed file is here). This means that you're using the native source code in an unaltered/unbundled state, leading to the following error: Uncaught SyntaxError: Cannot use import statement outside a module. This should be fixed by using the bundled version since the package is using rollup to create a bundle."+
+        "The reason you're getting the Uncaught ReferenceError: ms is not defined error is because modules are scoped, and since youre loading the library using native modules, ms is not in the global scope and is therefore not accessible in the following script tag."+"It looks like you should be able to load the dist version of this file to have ms defined on the window. Check out this example from the library author to see an example of how this can be done.")
+    }
+
     async clickPublish(){
         const element = await this.driver.$('button.gh-publish-trigger');
+        await element.click()
+    }
+
+    async clickPublishV2(){
+        const element = await this.driver.$('div.gh-publishmenu-trigger');
+        await element.click()
+    }
+
+    async clickPublishv2Final(){
+        const element = await this.driver.$('button.gh-publishmenu-button');
         await element.click()
     }
 

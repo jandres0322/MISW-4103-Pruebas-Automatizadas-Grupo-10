@@ -1,4 +1,5 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
+const PagesPage = require('../page_objects/PagesPage');
 
 When ('I click pages', async function(){
     const pagesPage  = new PagesPage(this.driver);
@@ -15,9 +16,29 @@ When ('I write the page', async function(){
     await pagesPage.writePage()
 })
 
+When ('I write the page v2', async function(){
+    const pagesPage  = new PagesPage(this.driver);
+    await pagesPage.writePageV2()
+})
+
 When ('I click publish', async function(){
     const pagesPage  = new PagesPage(this.driver);
     await pagesPage.clickPublish()
+})
+
+When ('I click publish v2', async function(){
+    const pagesPage  = new PagesPage(this.driver);
+    await pagesPage.clickPublishv2Final()
+})
+
+When ('I try to publish a page without a title', async function(){
+    const pagesPage  = new PagesPage(this.driver);
+    await pagesPage.clickPublish()
+})
+
+When ('I try to publish a page without a title v2', async function(){
+    const pagesPage  = new PagesPage(this.driver);
+    await pagesPage.clickPublishV2()
 })
 
 When ('I click continue', async function(){

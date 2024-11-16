@@ -2,7 +2,7 @@ Feature: Crear pagina sin agregar el titulo de la página
 
 @EP005 @user1 @web
 Scenario: Crear pagina sin agregar el titulo de la página
-  GAnd I wait for 7 seconds
+    And I wait for 7 seconds
   Given I navigate to page "<URLv2>"
     And I wait for 5 seconds
     And I enter email v2 "<USERNAME1v2>"

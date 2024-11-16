@@ -3,7 +3,7 @@ const fs = require('fs-extra');
 
 
 const basePath = '../kraken/artefacts';
-const scenarios = ['EP001', 'EP002', 'EP004', 'EP005']; 
+const scenarios = ['EP001', 'EP002', 'EP004', 'EP005', 'EP006']; 
 const versions = ['version1', 'version2']; 
 const reportFilePath = `${basePath}/diff/report.html`; 
 
@@ -35,7 +35,7 @@ function generateHtmlReport(reportPath, results) {
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Reporte de Comparaciones</title>
+      <title>Reporte de Comparaciones GHOST</title>
       <style>
         body { font-family: Arial, sans-serif; margin: 20px; }
         h1 { color: #333; }

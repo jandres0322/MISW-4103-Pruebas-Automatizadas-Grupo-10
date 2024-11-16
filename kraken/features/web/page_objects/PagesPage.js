@@ -61,6 +61,11 @@ class PagesPage{
         await element.setValue("Titulo de la página de Prueba")
     }
 
+    async writeTitleV2(){
+        const element = await this.driver.$('textarea.ember-text-area');
+        await element.setValue("Titulo de la página de Prueba")
+    }
+
     async writeTitlePost(){
         const element = await this.driver.$('textarea.ember-text-area');
         await element.setValue("Prueba Automatizada");

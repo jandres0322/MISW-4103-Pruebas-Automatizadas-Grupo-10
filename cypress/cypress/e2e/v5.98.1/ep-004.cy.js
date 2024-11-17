@@ -9,7 +9,8 @@ describe("EP-004: Crear cuenta en Ghost con los campos diligenciados correctamen
   });
 
   it("Ejecución", () => {
-    const makeScreenShot = new MakeScreenShot("5.98.1");
+    const makeScreenShot = new MakeScreenShot(Cypress.env("ghostVersionReleaseCandidate"), Cypress.currentTest.titlePath);
+
 
     cy.log("GIVEN: Cargando datos de usuario")
     cy.fixture("user-register").then((data) => {

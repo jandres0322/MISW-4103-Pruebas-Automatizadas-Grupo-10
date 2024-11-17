@@ -8,7 +8,7 @@ describe("EP-002: Crear cuenta en Ghost con correo electronico invalido", () => 
   });
 
   it("Ejecución", () => {
-    const makeScreenShot = new MakeScreenShot("5.98.1");
+    const makeScreenShot = new MakeScreenShot(Cypress.env("ghostVersionReleaseCandidate"), Cypress.currentTest.titlePath);
 
     cy.fixture("user-register").then((data) => {
 

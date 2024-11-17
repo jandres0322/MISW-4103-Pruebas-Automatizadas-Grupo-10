@@ -80,6 +80,31 @@ class PagesPage{
                                 "sin embargo, para apreciar plenamente el valor de dichas pruebas, hay que saber cómo"+
                                 "era la vida antes de que se adoptaran de forma generalizada.")
     }
+
+    async clickOnFeatureImage(){
+        const element = await this.driver.$('button.gh-editor-feature-image-unsplash')
+        await element.click();
+    }
+
+    async clickOnInsertImage(){
+        const element = await this.driver.$('div.gh-unsplash-photo-footer a.gh-unsplash-button')
+        await element.click()
+    }
+
+    async loadImage(){
+        const nuevoSrc = 'features\web\auto.png';
+        const element = await this.driver.$('div.gh-editor-feature-image img');
+        //await element.setAttribute('src',nuevoSrc);
+        await element.executeScript(
+            "document.querySelector('img').setAttribute('src', arguments[0]);",
+            nuevoSrc
+          );
+    }   
+
+    async searchImage(){
+        const element = await this.driver.$('input.gh-unsplash-search');
+        await element.setValue("Diego Maradona")
+    }
 }
 
 module.exports = PagesPage;

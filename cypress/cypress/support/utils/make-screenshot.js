@@ -1,13 +1,14 @@
-
 class MakeScreenShot {
 
-  constructor(version) {
+  constructor(version, describeTitle) {
     this.versionGhost = version;
+    this.describeTitle = describeTitle;
   }
 
   execute(fileName) {
     cy.wait(3000);
-    cy.screenshot(`v${this.versionGhost}-${Cypress.currentTest.titlePath.join("/")}/${fileName}`);
+    const screenshotPath = `v${this.versionGhost}/${this.describeTitle[0]}/${fileName}`;
+    cy.screenshot(screenshotPath);
   }
 }
 

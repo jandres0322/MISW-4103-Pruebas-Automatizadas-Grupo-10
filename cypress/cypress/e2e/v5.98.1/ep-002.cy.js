@@ -1,4 +1,4 @@
-const registerScreen = require("../../support/screens/register-screen");
+const registerScreen = require("../../support/screens/v5.98.1/register-screen");
 const MakeScreenShot = require("../../support/utils/make-screenshot");
 
 describe("EP-002: Crear cuenta en Ghost con correo electronico invalido", () => {

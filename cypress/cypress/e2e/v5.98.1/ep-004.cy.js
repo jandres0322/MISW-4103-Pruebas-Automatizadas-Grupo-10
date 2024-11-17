@@ -1,5 +1,5 @@
-const registerScreen = require("../../support/screens/register-screen");
-const dashboardScreen = require("../../support/screens/dashboard-screen");
+const registerScreen = require("../../support/screens/v5.98.1/register-screen");
+const dashboardScreen = require("../../support/screens/v5.98.1/dashboard-screen");
 const MakeScreenShot = require("../../support/utils/make-screenshot");
 
 describe("EP-004: Crear cuenta en Ghost con los campos diligenciados correctamente", () => {

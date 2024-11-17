@@ -64,6 +64,11 @@ When ('I write title', async function(){
     await pagesPage.writeTitle()
 })
 
+When ('I write title v2', async function(){
+    const pagesPage  = new PagesPage(this.driver);
+    await pagesPage.writeTitleV2()
+})
+
 Then ('I should see copy link button', async function(){
     const pagesPage  = new PagesPage(this.driver);
     const isDisplayed = await pagesPage.isDisplayedCopylink();
@@ -71,6 +76,31 @@ Then ('I should see copy link button', async function(){
         throw new Error("El mensaje 'Boom! It's out there.' deberia estar visible en la página.");
     }
 })
+
+Then('I should see the notification article', async function () {
+    // Busca el <aside> que contiene las notificaciones
+    const aside = await this.driver.$('aside.gh-notifications');
+   
+    const asideExists = await aside.isExisting();
+    if (!asideExists) {
+        throw new Error('El contenedor de notificaciones no existe en el DOM.');
+    }
+
+    const article = await aside.$('article.gh-notification');
+
+    const articleExists = await article.isExisting();
+    if (!articleExists) {
+        throw new Error('El artículo con la notificación no existe en el DOM.');
+    }
+
+    const isVisible = await article.isDisplayed();
+    if (!isVisible) {
+        throw new Error('El artículo con la notificación no está visible en la página.');
+    }
+
+    console.log('El artículo con la notificación está presente y visible.');
+});
+
 
 When('I write the post title', async function(){
     const postsPages = new PagesPage(this.driver);

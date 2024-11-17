@@ -87,3 +87,52 @@ Este proyecto utiliza **Kraken** para realizar pruebas automatizadas en la aplic
       ![image](https://github.com/user-attachments/assets/a1e65696-3b20-4f0e-8983-92c4aa8be556)
 
    4. **Ejecutar la Prueba**: Una vez que la característica esté en la carpeta `features`, puedes ejecutarla con el comando mencionado arriba.
+
+ ### Configuración y Ejecución de Pruebas de Regressión Visual con ResembleJS
+
+Ubíquese en un directorio donde vaya a ubicar el proyecto y cree una carpeta "resemble", tal y como muestra la siguiete imagen:
+
+![image](https://github.com/user-attachments/assets/e9ca67d7-4500-4cfa-bd3e-a44b75678aaa)
+
+Ejecute los siguietes comandos: 
+
+  ```bash
+   npm init
+   En este directorio del proyecto debe crear un archivo llamado index.js
+   En este directorio del proyecto debe crear un archivo llamado config.json
+   isntalalr la libreria: 
+      npm install playwright
+   Instalar Resemble.js ejecute el siguiente comando:
+      npm install resemblejs
+   ```
+Dentro de la carpeta dodne estan los script "index.js", Ejecute el sigueite comadno para ejecutar las prueabas de regresión:
+
+```bash
+   node index.js
+   ```
+
+Se visualzará:
+
+![image](https://github.com/user-attachments/assets/d7d0a7d3-684a-4add-9386-aa6c6a8a615e)
+
+En la raiz del repositorio se encuentra la capeta ResembleJs, esta carpeta contiene el reporte en formato Html comparison_report. ResembleJs/comparison_report.html.
+
+Para generar el reporte debe seguir lso siguientes pasos:
+
+Navegar al path /ResembleJs desde la raiz del repositorio
+ejecutar npm ci
+ejecutar npm run start
+Esto generará el reporte nuevamente.
+
+Nota: para generar un reporte con datos actualizados debe haber previamente ejecutado kraken y kraken510
+
+El script buscará las imágenes generadas por kraken de manera recursiva dentro de las carpetas ./Kraken/artefacts/version1 y ./Kraken/artefacts/version2,  con base en dichas imagenes generará la comparacián y el reporte.
+
+
+ 
+
+
+
+
+
+

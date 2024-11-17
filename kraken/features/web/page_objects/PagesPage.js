@@ -105,6 +105,31 @@ class PagesPage{
         const element = await this.driver.$('input.gh-unsplash-search');
         await element.setValue("Diego Maradona")
     }
+
+    async navigateToPosts(){
+        const element = await this.driver.$('a[href="#/posts/"]')
+        await element.click()
+    }
+
+    async clickPostsEditor(){
+        const element = await this.driver.$('span[title="Go to Editor"]')
+        await element.click()
+    }
+
+    async clickPostsSettings(){
+        const element = await this.driver.$('button.settings-menu-toggle')
+        await element.click()
+    }
+
+    async clickTagComboBox(){
+        const element = await this.driver.$('input.ember-power-select-trigger-multiple-input')
+        await element.click()
+    }
+
+    async selectTag(){
+        const element = await this.driver.$('li[data-option-index="1"]')
+        await element.click()
+    }
 }
 
 module.exports = PagesPage;

@@ -1,7 +1,7 @@
-const loginScreen = require("../../support/screens/login-screen");
-const dashboardScreen = require("../../support/screens/dashboard-screen");
-const createPostScreen = require("../../support/screens/create-post-screen");
-const listPostScheduledScreen = require("../../support/screens/list-post-scheduled-screen");
+const loginScreen = require("../../support/screens/v5.98.1/login-screen");
+const dashboardScreen = require("../../support/screens/v5.98.1/dashboard-screen");
+const createPostScreen = require("../../support/screens/v5.98.1/create-post-screen");
+const listPostScheduledScreen = require("../../support/screens/v5.98.1/list-post-scheduled-screen");
 const MakeScreenShot = require("../../support/utils/make-screenshot");
 
 describe("EP-011: Escribir un post con todos los campos diligenciados pero programado", () => {
@@ -32,6 +32,7 @@ describe("EP-011: Escribir un post con todos los campos diligenciados pero progr
         createPostScreen.enterTitlePost(data.createPostValid.title);
         createPostScreen.enterDescriptionPost(data.createPostValid.description);
         createPostScreen.clickPageSettings();
+        makeScreenShot.execute("afterPageSettings");
         createPostScreen.enterExcerptPost(data.createPostValid.excerpt);
         createPostScreen.selectTag(data.createPostValid.tag);
         createPostScreen.clickPageSettings();

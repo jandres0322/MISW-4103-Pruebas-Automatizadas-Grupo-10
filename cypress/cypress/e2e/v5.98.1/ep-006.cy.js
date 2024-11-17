@@ -1,7 +1,7 @@
-const loginScreen = require("../../support/screens/login-screen");
-const dashboardScreen = require("../../support/screens/dashboard-screen");
-const listPageScreen = require("../../support/screens/list-page-screen");
-const createPageScreen = require("../../support/screens/create-page-screen");
+const loginScreen = require("../../support/screens/v5.98.1/login-screen");
+const dashboardScreen = require("../../support/screens/v5.98.1/dashboard-screen");
+const listPageScreen = require("../../support/screens/v5.98.1/list-page-screen");
+const createPageScreen = require("../../support/screens/v5.98.1/create-page-screen");
 const MakeScreenShot = require("../../support/utils/make-screenshot");
 
 describe("EP-006: Crear pagina diligenciado todos los campos correctamente", () => {

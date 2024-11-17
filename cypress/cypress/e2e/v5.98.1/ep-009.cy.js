@@ -1,7 +1,7 @@
-const loginScreen = require("../../support/screens/login-screen");
-const dashboardScreen = require("../../support/screens/dashboard-screen");
-const listTagScreen = require("../../support/screens/list-tag-screen");
-const createTagScreen = require("../../support/screens/create-tag-screen");
+const loginScreen = require("../../support/screens/v5.98.1/login-screen");
+const dashboardScreen = require("../../support/screens/v5.98.1/dashboard-screen");
+const listTagScreen = require("../../support/screens/v5.98.1/list-tag-screen");
+const createTagScreen = require("../../support/screens/v5.98.1/create-tag-screen");
 const MakeScreenShot = require("../../support/utils/make-screenshot");
 
 describe("EP-009: Crear tag con los campos diligenciados correctamente", () => {

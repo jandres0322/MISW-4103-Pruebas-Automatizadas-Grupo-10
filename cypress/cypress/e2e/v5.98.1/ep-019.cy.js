@@ -1,6 +1,6 @@
-const loginScreen = require("../../support/screens/login-screen");
-const dashboardScreen = require("../../support/screens/dashboard-screen");
-const listMemberScreen = require("../../support/screens/list-member-screen");
+const loginScreen = require("../../support/screens/v5.98.1/login-screen");
+const dashboardScreen = require("../../support/screens/v5.98.1/dashboard-screen");
+const listMemberScreen = require("../../support/screens/v5.98.1/list-member-screen");
 const MakeScreenShot = require("../../support/utils/make-screenshot");
 
 

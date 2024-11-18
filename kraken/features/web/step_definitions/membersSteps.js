@@ -64,6 +64,22 @@ Then('I should see the error message {kraken-string}', async function (mensaje) 
     
 });
 
+Then('I should see Please Enter an Email', async function () {
+    
+    await this.driver.pause(5000); 
+    const createdContainer = await this.driver.$("div.error p");
+    
+    const isDisplayed = await createdContainer.isDisplayed();
+    if (!isDisplayed) {
+        throw new Error("El mensaje 'Created' no está visible en la página.");
+    }
+
+    const textContent = await createdContainer.getText();
+    if (!textContent.includes("Invalid Email.")) {
+        throw new Error("El mensaje 'Invalid Email.' no se encuentra en el texto del elemento.");
+    }
+});
+
 
 
 //VERSIÓN DOS GHOST

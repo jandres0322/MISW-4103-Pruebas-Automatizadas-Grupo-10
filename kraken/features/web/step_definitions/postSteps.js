@@ -61,3 +61,28 @@ When ('I click on Insert Image', async function(){
     await postsPage.clickOnInsertImage();
 });
 
+When ('I navigate to Posts', async function(){
+    const postsPage = new PagesPage(this.driver);
+    await postsPage.navigateToPosts();
+});
+
+When ('I click in Posts Editor', async function(){
+    const postsPage = new PagesPage(this.driver);
+    await postsPage.clickPostsEditor();
+});
+
+When ('I click in Posts Settings', async function(){
+    const postsPage = new PagesPage(this.driver);
+    await postsPage.clickPostsSettings();
+});
+
+When ('I click in Tags ComboBox', async function(){
+    const postsPage = new PagesPage(this.driver);
+    await postsPage.clickTagComboBox();
+});
+
+When ('I select a tag', async function(){
+    const postsPage = new PagesPage(this.driver);
+    await postsPage.selectTag();
+});
+

@@ -10,6 +10,8 @@
     "EMAIVACIO": "",
     "FULL_NAME": "Luis Antonio Niño Niño",
     "CLEAN_NAME" : "",
+    "VALID_NAME" : "Juan Diego Niño Barreto",
+    "VALID_EMAIL": "clari0304@hotmail.com",
 
     "URLv2": "http://localhost:3001/ghost/#/signin",
     "USERNAME1v2": "estevenhr@gmail.com",

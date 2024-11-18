@@ -65,10 +65,6 @@ Then('I should see charging time should be less than 3 seconds', async function 
     assert(loadTime<3, 'I should see charging time should be less than 3 seconds');   
   });
 
-  When('I click Members', async function() {
-    const membersPage = new MembersPage(this.driver);
-    await membersPage.navigateToMembers();
-}) 
 
 When ('I click Members Configuration', async function(){
     const membersPage = new MembersPage(this.driver);

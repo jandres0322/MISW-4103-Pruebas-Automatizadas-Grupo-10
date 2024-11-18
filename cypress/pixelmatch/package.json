@@ -1,0 +1,18 @@
+{
+  "name": "backstopjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "path": "^0.12.7",
+    "pixelmatch": "^6.0.0",
+    "pngjs": "^7.0.0",
+    "sharp": "^0.33.5"
+  }
+}

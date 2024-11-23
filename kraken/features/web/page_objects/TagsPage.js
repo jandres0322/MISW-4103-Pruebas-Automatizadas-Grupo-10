@@ -40,7 +40,7 @@ class TagsPage {
     }
 
 
-    async crearTags(email = '', note = '', name = '') {
+    async crearTags(name = '', note = '') {
         
         //lets grab a random index
         const randomIndex = Math.floor(Math.random() * this.testData.length);
@@ -48,11 +48,10 @@ class TagsPage {
         
         let nameNote;
 
-        if ( name === "warning") 
-            nameNote = this.testData[randomIndex].string_peligrosos;
+        if ( name === "vacio" || name === "warning") 
+            nameNote = name === "vacio" ? "" :  this.testData[randomIndex].string_peligrosos;
         else
             nameNote = this.testData[randomIndex].name;
-
 
 
         let textNote;
@@ -74,5 +73,14 @@ class TagsPage {
         
         
       }
+
+      async getMensaje(mensaje) {
+        const errorMessageElement = await this.driver.$('.error .response');
+        await errorMessageElement.waitForDisplayed({ timeout: 10000 });
+    
+        const errorMessageText = await errorMessageElement.getText();
+        assert.strictEqual(errorMessageText, mensaje, 'El mensaje de error no es el esperado.');
+        
+    }
 }
 module.exports = TagsPage;

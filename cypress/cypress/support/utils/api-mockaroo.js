@@ -12,4 +12,13 @@ export class ApiMockaroo {
       return response.body;
     });
   }
+
+  static dataWrongPasswordRegisterUser() {
+    return cy.request({
+      method: "GET",
+      url: `${baseUrlMockaroo}/user_register_wrong_password.json?key=${apiKeyMockaroo}`,
+    }).then((response) => {
+      return response.body;
+    })
+  }
 }

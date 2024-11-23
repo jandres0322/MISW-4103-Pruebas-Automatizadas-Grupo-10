@@ -16,6 +16,7 @@ describe("EP-001: Crear cuenta en Ghost con campos del registro vacíos", () => 
       registerScreen.enterEmailAddress(data.email);
       registerScreen.enterPassword(data.password);
       registerScreen.clickCreateAccount();
+      registerScreen.cleanForm();
       registerScreen.validateErrorMain();
     });
   });
@@ -28,6 +29,7 @@ describe("EP-001: Crear cuenta en Ghost con campos del registro vacíos", () => 
         registerScreen.enterEmailAddress(item.email);
         registerScreen.enterPassword(item.password);
         registerScreen.clickCreateAccount();
+        registerScreen.cleanForm();
         registerScreen.validateErrorMain();
       });
     });
@@ -45,6 +47,7 @@ describe("EP-001: Crear cuenta en Ghost con campos del registro vacíos", () => 
     registerScreen.enterEmailAddress(data.email);
     registerScreen.enterPassword(data.password);
     registerScreen.clickCreateAccount();
+    registerScreen.cleanForm();
     registerScreen.validateErrorMain();
   });
 });

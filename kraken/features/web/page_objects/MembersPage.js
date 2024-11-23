@@ -112,20 +112,24 @@ class MembersPage {
         this.testData = await response.json();
     }
 
-    async crearMemebers(email = '') {
+    async crearMemebers(email = '', note = '') {
         
         //lets grab a random index
         const randomIndex = Math.floor(Math.random() * this.testData.length);
         const name = this.testData[randomIndex].first_name;
-        const nota = this.testData[randomIndex].nota;
+
+        let emailNote;
+
+        if ( note === "max 500") 
+            emailNote = this.testData[randomIndex].nota_max;
+        else
+            emailNote = this.testData[randomIndex].nota;
 
         let emailToUse;
 
-        if (email === "" || email === "not allowed") {
-            // Si el email está vacío o es "not allowed", generamos un correo no válido o vacío
-            emailToUse = email === "" ? "" : `${this.testData[randomIndex].first_name}@`;
+        if (email === "vacio" || email === "not allowed") {
+            emailToUse = email === "vacio" ? "" : `${this.testData[randomIndex].first_name}@`;
         } else {
-            // Si no es vacío ni "not allowed", usamos un correo aleatorio
             emailToUse = this.testData[randomIndex].email;
         }
 
@@ -134,7 +138,7 @@ class MembersPage {
             // Esperar que cada acción termine antes de pasar a la siguiente
             await this.enterName(name); // Espera a que se complete antes de continuar
             await this.enterEmail(emailToUse); // Espera a que se complete antes de continuar
-            await this.enterMemberNote(nota); // Espera a que se complete antes de continuar
+            await this.enterMemberNote(emailNote); // Espera a que se complete antes de continuar
         } catch (error) {
             console.error("Error en la creación de miembro:", error);
             throw error; // Opcionalmente puedes manejar el error de otra manera si lo necesitas

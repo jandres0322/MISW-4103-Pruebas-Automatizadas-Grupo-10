@@ -56,6 +56,9 @@ Then('I click on confirm delete tag', async function(){
 })
 
 
+
+
+
 //POOL DE DATOS
 
 When('I fetch data from Mockaroo API {string} tags', async function (apiUrl) {
@@ -63,4 +66,11 @@ When('I fetch data from Mockaroo API {string} tags', async function (apiUrl) {
     const tagsPage = new TagsPage(this.driver);
     await tagsPage.getTestDataSet(apiUrl, 'GET');
     await tagsPage.crearTags();  
+});
+
+When('I fetch data from Mockaroo API {string} tags not name', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.crearTags('vacio');  
 });

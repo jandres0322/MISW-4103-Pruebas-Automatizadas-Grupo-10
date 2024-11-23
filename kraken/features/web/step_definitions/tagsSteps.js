@@ -1,4 +1,5 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
+const TagsPage = require('../page_objects/TagsPage');
 const assert = require('assert');
 
 
@@ -53,3 +54,13 @@ Then('I click on confirm delete tag', async function(){
     let element = await this.driver.$('.modal-footer > button:nth-child(2)');
     return await element.click();
 })
+
+
+//POOL DE DATOS
+
+When('I fetch data from Mockaroo API {string} tags', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.crearTags();  
+});

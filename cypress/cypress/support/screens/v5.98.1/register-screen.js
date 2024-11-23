@@ -11,27 +11,27 @@ class RegisterScreen {
   }
 
   enterSiteTitle(siteTitle) {
-    this.elements.siteTitleInput().type(siteTitle);
+    this.elements.siteTitleInput().type(siteTitle = " ");
   }
 
   enterFullName(fullName) {
-    this.elements.fullNameInput().type(fullName);
+    this.elements.fullNameInput().type(fullName = " ");
   }
 
   enterEmailAddress(emailAddress) {
-    this.elements.emailAddressInput().type(emailAddress);
+    this.elements.emailAddressInput().type(emailAddress = " ");
   }
 
   enterPassword(password) {
-    this.elements.passwordInput().type(password);
+    this.elements.passwordInput().type(password = " ");
   }
 
   validateErrorPassword(errorMessage) {
     this.elements.errorMessagePassword().should('contain.text', errorMessage);
   }
 
-  validateErrorMain(errorMessage) {
-    this.elements.errorMain().should('contain.text', errorMessage);
+  validateErrorMain() {
+    this.elements.errorMain().should('contain.text', 'Please fill out every field correctly to set up your site.');
   }
 
   clickCreateAccount() {

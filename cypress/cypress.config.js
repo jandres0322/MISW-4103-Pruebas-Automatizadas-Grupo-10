@@ -5,6 +5,8 @@ module.exports = {
       apiUrl: "http://localhost:2368/ghost",
       ghostVersionReleaseCandidate: "5.98.1",
       ghostVersionBase: "4.5.0",
+      apirUrlMockaroo: "https://my.api.mockaroo.com",
+      apiKeyMockaroo: "95aaf2c0",
     },
   },
 };

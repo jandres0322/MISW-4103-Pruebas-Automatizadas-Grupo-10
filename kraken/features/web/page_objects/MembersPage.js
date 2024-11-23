@@ -117,8 +117,17 @@ class MembersPage {
         //lets grab a random index
         const randomIndex = Math.floor(Math.random() * this.testData.length);
         const name = this.testData[randomIndex].first_name;
-        const emailToUse = email === "" ? "" : this.testData[randomIndex].email;
         const nota = this.testData[randomIndex].nota;
+
+        let emailToUse;
+
+        if (email === "" || email === "not allowed") {
+            // Si el email está vacío o es "not allowed", generamos un correo no válido o vacío
+            emailToUse = email === "" ? "" : `${this.testData[randomIndex].first_name}@`;
+        } else {
+            // Si no es vacío ni "not allowed", usamos un correo aleatorio
+            emailToUse = this.testData[randomIndex].email;
+        }
 
         // Imprimir los valores en la consola
         try {

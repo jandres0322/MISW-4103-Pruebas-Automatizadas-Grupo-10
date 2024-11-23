@@ -17,6 +17,12 @@ class TagsPage {
         await element.setValue(name);
     }
 
+    async slugName(name) {
+        let element = await this.driver.$('#tag-slug');
+        await element.waitForDisplayed(15000);
+        await element.setValue(name);
+    }
+
     async enterMemberNote(note) {
         try {
             const element = await this.driver.$('[data-test-input="tag-description"]');
@@ -40,7 +46,7 @@ class TagsPage {
     }
 
 
-    async crearTags(name = '', descripcion = '') {
+    async crearTags(name = '', descripcion = '', slug = '') {
         
         //lets grab a random index
         const randomIndex = Math.floor(Math.random() * this.testData.length);
@@ -61,10 +67,17 @@ class TagsPage {
         else
             textNote = this.testData[randomIndex].descripción;
 
-       
+        let slugNote;
+
+            if ( slug === "max 191") 
+                slugNote = this.testData[randomIndex].descripción_max;
+            else
+                slugNote = this.testData[randomIndex].slug;
+    
         try {
             
             await this.enterName(nameNote); 
+            await this.slugName(slugNote); 
             await this.enterMemberNote(textNote); 
         } catch (error) {
             console.error("Error en la creación de tags:", error);

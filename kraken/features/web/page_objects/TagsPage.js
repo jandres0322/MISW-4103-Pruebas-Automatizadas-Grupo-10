@@ -40,7 +40,7 @@ class TagsPage {
     }
 
 
-    async crearTags(name = '', note = '') {
+    async crearTags(name = '', descripcion = '') {
         
         //lets grab a random index
         const randomIndex = Math.floor(Math.random() * this.testData.length);
@@ -56,8 +56,8 @@ class TagsPage {
 
         let textNote;
 
-        if ( note === "max 500") 
-            textNote = this.testData[randomIndex].nota_max;
+        if ( descripcion === "max 500") 
+            textNote = this.testData[randomIndex].descripción_max;
         else
             textNote = this.testData[randomIndex].descripción;
 
@@ -67,7 +67,7 @@ class TagsPage {
             await this.enterName(nameNote); 
             await this.enterMemberNote(textNote); 
         } catch (error) {
-            console.error("Error en la creación de miembro:", error);
+            console.error("Error en la creación de tags:", error);
             throw error; 
         }
         

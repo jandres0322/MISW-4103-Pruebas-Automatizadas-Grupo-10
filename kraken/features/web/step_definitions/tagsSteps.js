@@ -57,6 +57,23 @@ Then('I click on confirm delete tag', async function(){
 
 
 
+Then('I should see Please Enter an mensaje {string}', async function (mensaje) {
+    
+    await this.driver.pause(5000); 
+    const createdContainer = await this.driver.$("div.error p");
+    
+    const isDisplayed = await createdContainer.isDisplayed();
+    if (!isDisplayed) {
+        throw new Error("El mensaje 'Created' no está visible en la página.");
+    }
+
+    const textContent = await createdContainer.getText();
+    if (!textContent.includes(mensaje)) {
+        throw new Error("El mensaje  no se encuentra en el texto del elemento.");
+    }
+});
+
+
 
 
 //POOL DE DATOS
@@ -73,4 +90,12 @@ When('I fetch data from Mockaroo API {string} tags not name', async function (ap
     const tagsPage = new TagsPage(this.driver);
     await tagsPage.getTestDataSet(apiUrl, 'GET');
     await tagsPage.crearTags('vacio');  
+});
+
+
+When('I fetch data from Mockaroo API {string} tags not allowed max 500 descripcion', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.crearTags('','max 500');  
 });

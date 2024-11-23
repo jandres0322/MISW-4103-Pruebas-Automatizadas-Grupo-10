@@ -1,7 +1,7 @@
 {
     "URL": "http://localhost:2368/ghost/#/signin",
-    "USERNAME1": "da.ninoa1@uniandes.edu.co",
-    "PASSWORD1": "L@v1dsbll_84",
+    "USERNAME1": "estevenhr@gmail.com",
+    "PASSWORD1": "Consuelo1789.",
     "NAME1": "Liliana3",
     "EMAIL1": "liliana7@gmail.com",
     "NOTE1": "USUARIO PRUEBA 3",
@@ -10,8 +10,6 @@
     "EMAIVACIO": "",
     "FULL_NAME": "Luis Antonio Niño Niño",
     "CLEAN_NAME" : "",
-    "VALID_NAME" : "Juan Diego Niño Barreto",
-    "VALID_EMAIL": "clari0304@hotmail.com",
 
     "URLv2": "http://localhost:3001/ghost/#/signin",
     "USERNAME1v2": "estevenhr@gmail.com",

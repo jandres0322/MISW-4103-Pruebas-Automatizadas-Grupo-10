@@ -4,7 +4,7 @@ const UpdateProfile = require('../page_objects/UpdateProfile');
 const LoadPage = require('../page_objects/LoadPage');
 const assert = require('assert');
 const MembersPage = require('../page_objects/MembersPage');
-const PagesPage = require('kraken-node/bin/features/web/page_objects/PagesPage');
+
 
 
 

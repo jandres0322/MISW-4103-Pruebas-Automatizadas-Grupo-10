@@ -112,19 +112,19 @@ class MembersPage {
         this.testData = await response.json();
     }
 
-    async crearMemebers() {
+    async crearMemebers(email = '') {
         
         //lets grab a random index
         const randomIndex = Math.floor(Math.random() * this.testData.length);
         const name = this.testData[randomIndex].first_name;
-        const email = this.testData[randomIndex].email;
+        const emailToUse = email === "" ? "" : this.testData[randomIndex].email;
         const nota = this.testData[randomIndex].nota;
 
         // Imprimir los valores en la consola
         try {
             // Esperar que cada acción termine antes de pasar a la siguiente
             await this.enterName(name); // Espera a que se complete antes de continuar
-            await this.enterEmail(email); // Espera a que se complete antes de continuar
+            await this.enterEmail(emailToUse); // Espera a que se complete antes de continuar
             await this.enterMemberNote(nota); // Espera a que se complete antes de continuar
         } catch (error) {
             console.error("Error en la creación de miembro:", error);
@@ -143,7 +143,7 @@ class MembersPage {
             await element.waitForDisplayed(15000);
             await element.click();
             await element.setValue(name);
-            await this.driver.pause(10000); 
+            await this.driver.pause(2000); 
             console.log("Nombre introducido correctamente");
         } catch (error) {
             console.error("Error al introducir el nombre:", error);
@@ -173,12 +173,11 @@ class MembersPage {
             
             await element.waitForDisplayed(15000);
             await element.click();
-            await this.driver.pause(4000); 
+            await this.driver.pause(2000); 
             await element.setValue(note);
             const value = await element.getValue();
             await this.driver.pause(2000); 
 
-            await this.driver.pause(6000); 
             console.log("Valor en el textarea después de setValue:", value);
     
             if (value !== note) {
@@ -191,6 +190,8 @@ class MembersPage {
             throw error;
         }
     }
+
+    
     
 }
 module.exports = MembersPage;

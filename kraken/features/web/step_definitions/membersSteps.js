@@ -125,9 +125,17 @@ Then('I see the Delete member button', async function() {
 
 //POOL DE DATOS
 
-When('I fetch data from Mockaroo API {string}', async function (apiUrl) {
+When('I fetch data from Mockaroo API {string} ', async function (apiUrl) {
     
     const membersPage = new MembersPage(this.driver);
     await membersPage.getTestDataSet(apiUrl, 'GET');
     await membersPage.crearMemebers();  
 });
+
+When('I fetch data from Mockaroo API {string} not email', async function (apiUrl) {
+    
+    const membersPage = new MembersPage(this.driver);
+    await membersPage.getTestDataSet(apiUrl, 'GET');
+    await membersPage.crearMemebers('');  
+});
+

@@ -139,3 +139,10 @@ When('I fetch data from Mockaroo API {string} not email', async function (apiUrl
     await membersPage.crearMemebers('');  
 });
 
+When('I fetch data from Mockaroo API {string} not allowed email', async function (apiUrl) {
+    
+    const membersPage = new MembersPage(this.driver);
+    await membersPage.getTestDataSet(apiUrl, 'GET');
+    await membersPage.crearMemebers('not allowed');  
+});
+

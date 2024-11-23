@@ -100,6 +100,23 @@ Then('I should see Please Enter an Note long', async function () {
 });
 
 
+Then('I should see Please Enter an Warning', async function () {
+    
+    await this.driver.pause(5000); 
+    const createdContainer = await this.driver.$("div.error p");
+    
+    const isDisplayed = await createdContainer.isDisplayed();
+    if (!isDisplayed) {
+        throw new Error("El mensaje 'Created' no está visible en la página.");
+    }
+
+    const textContent = await createdContainer.getText();
+    if (!textContent.includes("Warning.")) {
+        throw new Error("El mensaje 'Warning.' no se encuentra en el texto del elemento.");
+    }
+});
+
+
 
 
 //VERSIÓN DOS GHOST
@@ -169,5 +186,12 @@ When('I fetch data from Mockaroo API {string} not allowed max 500 note', async f
     const membersPage = new MembersPage(this.driver);
     await membersPage.getTestDataSet(apiUrl, 'GET');
     await membersPage.crearMemebers('','max 500');  
+});
+
+When('I fetch data from Mockaroo API {string} not allowed warning', async function (apiUrl) {
+    
+    const membersPage = new MembersPage(this.driver);
+    await membersPage.getTestDataSet(apiUrl, 'GET');
+    await membersPage.crearMemebers('','','warning');  
 });
 

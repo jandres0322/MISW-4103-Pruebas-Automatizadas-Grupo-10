@@ -112,11 +112,19 @@ class MembersPage {
         this.testData = await response.json();
     }
 
-    async crearMemebers(email = '', note = '') {
+    async crearMemebers(email = '', note = '', name = '') {
         
         //lets grab a random index
         const randomIndex = Math.floor(Math.random() * this.testData.length);
-        const name = this.testData[randomIndex].first_name;
+    
+        
+        let nameNote;
+
+        if ( name === "warning") 
+            nameNote = this.testData[randomIndex].string_peligrosos;
+        else
+            nameNote = this.testData[randomIndex].first_name;
+
 
         let emailNote;
 
@@ -124,6 +132,7 @@ class MembersPage {
             emailNote = this.testData[randomIndex].nota_max;
         else
             emailNote = this.testData[randomIndex].nota;
+
 
         let emailToUse;
 
@@ -133,15 +142,15 @@ class MembersPage {
             emailToUse = this.testData[randomIndex].email;
         }
 
-        // Imprimir los valores en la consola
+       
         try {
-            // Esperar que cada acción termine antes de pasar a la siguiente
-            await this.enterName(name); // Espera a que se complete antes de continuar
-            await this.enterEmail(emailToUse); // Espera a que se complete antes de continuar
-            await this.enterMemberNote(emailNote); // Espera a que se complete antes de continuar
+            
+            await this.enterName(nameNote); 
+            await this.enterEmail(emailToUse); 
+            await this.enterMemberNote(emailNote); 
         } catch (error) {
             console.error("Error en la creación de miembro:", error);
-            throw error; // Opcionalmente puedes manejar el error de otra manera si lo necesitas
+            throw error; 
         }
         
         

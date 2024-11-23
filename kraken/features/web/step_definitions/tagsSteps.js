@@ -99,3 +99,10 @@ When('I fetch data from Mockaroo API {string} tags not allowed max 500 descripci
     await tagsPage.getTestDataSet(apiUrl, 'GET');
     await tagsPage.crearTags('','max 500');  
 });
+
+When('I fetch data from Mockaroo API {string} tags not allowed warning', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.crearTags('warning','');  
+});

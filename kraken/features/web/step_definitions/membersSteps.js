@@ -1,6 +1,8 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const MembersPage = require('../page_objects/MembersPage');
 const { faker } = require('@faker-js/faker');
+const axios = require('axios');
+const fetch = require('node-fetch');
 
 
 When('I click Members', async function() {
@@ -118,5 +120,14 @@ Then('I see the Delete member button', async function() {
     const membersPage = new MembersPage(this.driver);
     await membersPage.getVerificaButtonDelete();
 
+});
+
+
+//POOL DE DATOS
+
+When('I fetch data from Mockaroo API {string}', async function (apiUrl) {
     
+    const membersPage = new MembersPage(this.driver);
+    await membersPage.getTestDataSet(apiUrl, 'GET');
+    await membersPage.crearMemebers();  
 });

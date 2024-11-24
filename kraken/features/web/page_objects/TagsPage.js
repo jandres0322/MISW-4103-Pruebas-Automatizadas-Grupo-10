@@ -152,8 +152,8 @@ class TagsPage {
                 slugNote = this.testData[randomIndex].slug;
 
         let titleMeta;
-        if ( title === "max 70") 
-            titleMeta = this.testData[randomIndex].descripción_max;
+        if ( title === "max 70" || title === "warning") 
+            titleMeta = title === "max 70" ? this.testData[randomIndex].descripción_max :  this.testData[randomIndex].string_peligrosos; 
         else
             titleMeta = this.testData[randomIndex].titulo_meta;
 

@@ -85,9 +85,9 @@ class TagsPage {
         }
         
         
-      }
+    }
 
-      async getMensaje(mensaje) {
+    async getMensaje(mensaje) {
         const errorMessageElement = await this.driver.$('.error .response');
         await errorMessageElement.waitForDisplayed({ timeout: 10000 });
     
@@ -95,5 +95,155 @@ class TagsPage {
         assert.strictEqual(errorMessageText, mensaje, 'El mensaje de error no es el esperado.');
         
     }
+
+    async expandMetaData() {
+
+        let element = await this.driver.$('.gh-btn.gh-btn-expand');
+        await element.click();
+    }
+
+    async enterMetaTitle(titulo) {
+        
+        let element = await this.driver.$('#meta-title');
+        await element.waitForDisplayed(15000);
+        await element.setValue(titulo);
+    }
+
+    async enterMetaDescripcion(descripcion) {
+
+        let element = await this.driver.$('#meta-description');
+        await element.waitForDisplayed(15000);
+        await element.setValue(descripcion);
+    }
+
+    async enterMetaUrl(url) {
+        let element = await this.driver.$('#canonical-url');
+        await element.waitForDisplayed(15000);
+        await element.setValue(url);
+    }
+
+
+    async crearTagsMetaData(name = '', descripcion = '', slug = '', title = '', url = '') {
+        
+        //lets grab a random index
+        const randomIndex = Math.floor(Math.random() * this.testData.length);
+    
+        
+        let nameNote;
+
+        if ( name === "vacio" || name === "warning") 
+            nameNote = name === "vacio" ? "" :  this.testData[randomIndex].string_peligrosos;
+        else
+            nameNote = this.testData[randomIndex].name;
+
+
+        let textNote;
+
+        if ( descripcion === "max 500") 
+            textNote = this.testData[randomIndex].descripción_max;
+        else
+            textNote = this.testData[randomIndex].descripción;
+
+        let slugNote;
+
+            if ( slug === "max 191") 
+                slugNote = this.testData[randomIndex].descripción_max;
+            else
+                slugNote = this.testData[randomIndex].slug;
+        
+        let titleMeta;
+
+            if (title === "max 70" || title === "warning") {
+                titleMeta = title === "max 70" 
+                    ? this.testData[randomIndex].descripción_max 
+                    : this.testData[randomIndex].string_peligrosos;
+            } else if (title === "vacio") {
+                titleMeta = ""; // Asignar una cadena vacía
+            } else {
+                titleMeta = this.testData[randomIndex].titulo_meta;
+            }
+
+        
+        let descripcionMeta;
+        descripcionMeta = this.testData[randomIndex].descripcion_meta;
+
+
+        let urlMeta;
+
+        if (url === "warning") {
+            urlMeta = this.testData[randomIndex].descripción;
+        } else if (url === "vacio") {
+            urlMeta = ""; // Asignar una cadena vacía
+        } else {
+            urlMeta = this.testData[randomIndex].url;
+        }
+
+        
+    
+        try {
+            
+            await this.enterName(nameNote); 
+            await this.slugName(slugNote); 
+            await this.enterMemberNote(textNote); 
+            await this.enterMetaTitle(titleMeta); 
+            await this.enterMetaDescripcion(descripcionMeta); 
+            await this.enterMetaUrl(urlMeta); 
+        } catch (error) {
+            console.error("Error en la creación de tags:", error);
+            throw error; 
+        }
+        
+        
+    }
+
+    async selectTagFromList(name) {
+        const element = await this.getTagFromList(name);
+        await element.click();
+    }
+
+    async getTagFromList(name) {
+        return await this.driver.$(`[data-test-tag-name]=${name}`);
+    }
+
+    async editarTagsMetaData(name = '', descripcion = '', slug = '', title = '', url = '') {
+        
+        //lets grab a random index
+        const randomIndex = Math.floor(Math.random() * this.testData.length);
+        try {
+        
+            let nameNote;
+
+            if ( name === "vacio") {
+                nameNote = name === "vacio" ? null :  this.testData[randomIndex].name;
+                await this.enterName(nameNote); 
+            }
+
+            if ( name === "max 191") {
+                nameNote = name === "vacio" ? null :  this.testData[randomIndex].descripción_max;
+                await this.enterName(nameNote); 
+            }
+
+            if ( name === "") {
+                nameNote = this.testData[randomIndex].name;
+                await this.enterName(nameNote); 
+            }
+        
+            let slugNote;
+            if ( slug === "max 191") {
+                slugNote = slug === "vacio" ? null :  this.testData[randomIndex].descripción_max;
+                await this.slugName(slugNote); 
+            }
+
+          
+        } catch (error) {
+            console.error("Error en la creación de tags:", error);
+            throw error; 
+        }
+        
+        
+    }
+
+
+
 }
 module.exports = TagsPage;

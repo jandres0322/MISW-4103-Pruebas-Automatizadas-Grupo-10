@@ -113,3 +113,109 @@ When('I fetch data from Mockaroo API {string} tags not allowed max 191 slug', as
     await tagsPage.getTestDataSet(apiUrl, 'GET');
     await tagsPage.crearTags('','','max 191');  
 });
+
+When('I click on expand button Meta Data', async function () {
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.expandMetaData();
+});
+
+When('I fill the meta title input', async function () {
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.enterMetaTitle();
+});
+
+
+When('I fill the meta description textarea', async function () {
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.enterMetaDescripcion();
+});
+
+When('I fill the canonical URL input', async function () {
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.enterMetaUrl();
+});
+
+
+When('I fetch data from Mockaroo API {string} tags meta data', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.crearTagsMetaData();  
+});
+
+When('I fetch data from Mockaroo API {string} tags meta data not allowed max 70 title', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.crearTagsMetaData('','','','max 70');  
+});
+
+When('I fetch data from Mockaroo API {string} tags meta data not allowed url', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.crearTagsMetaData('','','','','warning');  
+});
+
+When('I fetch data from Mockaroo API {string} tags meta data not allowed warning title', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.crearTagsMetaData('','','','warning','');  
+});
+
+When('I fetch data from Mockaroo API {string} tags meta data allowed vacio title', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.crearTagsMetaData('','','','vacio','');  
+});
+
+When('I fetch data from Mockaroo API {string} tags meta data allowed vacio url', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.crearTagsMetaData('','','','','vacio');  
+});
+
+When('I select the tag name {kraken-string} from the list', async function (name) {
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.selectTagFromList(name);
+});
+
+When('I fetch data from Mockaroo API {string} tags edit vacio name', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.editarTagsMetaData('vacio','','','','');  
+});
+
+When('I select the first tag', async function () {
+    // Seleccionar el primer tag en la lista
+    const firstTag = await this.driver.$('li.gh-list-row.gh-tags-list-item a.gh-tag-list-title');
+    
+    // Hacer clic en el primer tag
+    await firstTag.click();
+});
+
+When('I fetch data from Mockaroo API {string}  tags edit mayor 191 name', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.editarTagsMetaData('max 191','','','','');  
+});
+
+When('I fetch data from Mockaroo API {string} tags edit name ok', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.editarTagsMetaData('','','','','');  
+});
+
+
+When('I fetch data from Mockaroo API {string} tags edit mayor 191 slug', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.editarTagsMetaData('otro','','max 191','','');  
+});

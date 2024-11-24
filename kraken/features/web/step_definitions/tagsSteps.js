@@ -149,3 +149,10 @@ When('I fetch data from Mockaroo API {string} tags meta data not allowed max 70 
     await tagsPage.getTestDataSet(apiUrl, 'GET');
     await tagsPage.crearTagsMetaData('','','','max 70');  
 });
+
+When('I fetch data from Mockaroo API {string} tags meta data not allowed url', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.crearTagsMetaData('','','','','warning');  
+});

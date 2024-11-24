@@ -163,3 +163,10 @@ When('I fetch data from Mockaroo API {string} tags meta data not allowed warning
     await tagsPage.getTestDataSet(apiUrl, 'GET');
     await tagsPage.crearTagsMetaData('','','','warning','');  
 });
+
+When('I fetch data from Mockaroo API {string} tags meta data allowed vacio title', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.crearTagsMetaData('','','','vacio','');  
+});

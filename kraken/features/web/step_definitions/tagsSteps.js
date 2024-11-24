@@ -142,3 +142,10 @@ When('I fetch data from Mockaroo API {string} tags meta data', async function (a
     await tagsPage.getTestDataSet(apiUrl, 'GET');
     await tagsPage.crearTagsMetaData();  
 });
+
+When('I fetch data from Mockaroo API {string} tags meta data not allowed max 70 title', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.crearTagsMetaData('','','','max 70');  
+});

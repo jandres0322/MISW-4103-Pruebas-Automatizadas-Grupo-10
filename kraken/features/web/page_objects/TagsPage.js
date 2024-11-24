@@ -123,7 +123,7 @@ class TagsPage {
     }
 
 
-    async crearTagsMetaData(name = '', descripcion = '', slug = '') {
+    async crearTagsMetaData(name = '', descripcion = '', slug = '', title = '') {
         
         //lets grab a random index
         const randomIndex = Math.floor(Math.random() * this.testData.length);
@@ -152,7 +152,12 @@ class TagsPage {
                 slugNote = this.testData[randomIndex].slug;
 
         let titleMeta;
-        titleMeta = this.testData[randomIndex].titulo_meta;
+        if ( title === "max 70") 
+            titleMeta = this.testData[randomIndex].descripción_max;
+        else
+            titleMeta = this.testData[randomIndex].titulo_meta;
+
+        
         let descripcionMeta;
         descripcionMeta = this.testData[randomIndex].descripcion_meta;
         let urlMeta;

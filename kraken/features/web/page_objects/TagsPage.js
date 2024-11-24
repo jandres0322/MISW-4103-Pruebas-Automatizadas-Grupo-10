@@ -123,7 +123,7 @@ class TagsPage {
     }
 
 
-    async crearTagsMetaData(name = '', descripcion = '', slug = '', title = '') {
+    async crearTagsMetaData(name = '', descripcion = '', slug = '', title = '', url = '') {
         
         //lets grab a random index
         const randomIndex = Math.floor(Math.random() * this.testData.length);
@@ -160,8 +160,16 @@ class TagsPage {
         
         let descripcionMeta;
         descripcionMeta = this.testData[randomIndex].descripcion_meta;
+
+
         let urlMeta;
-        urlMeta = this.testData[randomIndex].url;
+
+        if ( url === "warning") 
+            urlMeta = this.testData[randomIndex].descripción;
+        else
+            urlMeta = this.testData[randomIndex].url;
+
+        
     
         try {
             

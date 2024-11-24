@@ -214,12 +214,17 @@ class TagsPage {
             let nameNote;
 
             if ( name === "vacio") {
-                nameNote = name === "vacio" ? null :  this.testData[randomIndex].string_peligrosos;
+                nameNote = name === "vacio" ? null :  this.testData[randomIndex].name;
                 await this.enterName(nameNote); 
             }
 
             if ( name === "max 191") {
                 nameNote = name === "vacio" ? null :  this.testData[randomIndex].descripción_max;
+                await this.enterName(nameNote); 
+            }
+
+            if ( name === "") {
+                nameNote = this.testData[randomIndex].name;
                 await this.enterName(nameNote); 
             }
 

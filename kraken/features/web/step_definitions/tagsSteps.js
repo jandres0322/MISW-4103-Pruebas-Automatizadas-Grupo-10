@@ -198,9 +198,16 @@ When('I select the first tag', async function () {
     await firstTag.click();
 });
 
-When('I fetch data from Mockaroo API {string} tags edit mayor 191 name', async function (apiUrl) {
+When('I fetch data from Mockaroo API {string}  tags edit name ok', async function (apiUrl) {
     
     const tagsPage = new TagsPage(this.driver);
     await tagsPage.getTestDataSet(apiUrl, 'GET');
     await tagsPage.editarTagsMetaData('max 191','','','','');  
+});
+
+When('I fetch data from Mockaroo API {string} tags edit name ok', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.editarTagsMetaData('','','','','');  
 });

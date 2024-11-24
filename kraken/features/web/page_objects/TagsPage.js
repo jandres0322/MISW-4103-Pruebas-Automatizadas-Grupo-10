@@ -218,6 +218,11 @@ class TagsPage {
                 await this.enterName(nameNote); 
             }
 
+            if ( name === "max 191") {
+                nameNote = name === "vacio" ? null :  this.testData[randomIndex].descripción_max;
+                await this.enterName(nameNote); 
+            }
+
           
         } catch (error) {
             console.error("Error en la creación de tags:", error);

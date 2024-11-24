@@ -14,7 +14,7 @@ class CreatePageScreen {
   }
 
   enterTitlePage(title) {
-    this.elements.titlePageInput().type(title);
+    this.elements.titlePageInput().type(title ?? " ");
   }
 
   enterDescriptionPage(description) {
@@ -22,7 +22,7 @@ class CreatePageScreen {
   }
 
   enterExcerptPage(excerpt) {
-    this.elements.excerptPageInput().type(excerpt);
+    this.elements.excerptPageInput().type(excerpt, { force: true });
   }
 
   selectTag(tag) {

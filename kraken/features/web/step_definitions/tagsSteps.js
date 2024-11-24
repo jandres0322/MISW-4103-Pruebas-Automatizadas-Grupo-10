@@ -177,3 +177,23 @@ When('I fetch data from Mockaroo API {string} tags meta data allowed vacio url',
     await tagsPage.getTestDataSet(apiUrl, 'GET');
     await tagsPage.crearTagsMetaData('','','','','vacio');  
 });
+
+When('I select the tag name {kraken-string} from the list', async function (name) {
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.selectTagFromList(name);
+});
+
+When('I fetch data from Mockaroo API {string} tags edit vacio name', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.editarTagsMetaData('vacio','','','','');  
+});
+
+When('I select the first tag', async function () {
+    // Seleccionar el primer tag en la lista
+    const firstTag = await this.driver.$('li.gh-list-row.gh-tags-list-item a.gh-tag-list-title');
+    
+    // Hacer clic en el primer tag
+    await firstTag.click();
+});

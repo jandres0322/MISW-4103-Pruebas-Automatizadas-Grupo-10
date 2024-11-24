@@ -1,7 +1,7 @@
 Feature: create tag
 
 @user1 @web
-Scenario: En la edición del tag, con nombre de tag vacío,  debe presentar el mensaje de error  en pantalla:'You must specify a name for the tag.'
+Scenario:  En editar del tag, con nombre de tag entre 1 -190,  debe dejar editar
     #Login
     Given I navigate to page "<URL>"
         And I wait for 5 seconds

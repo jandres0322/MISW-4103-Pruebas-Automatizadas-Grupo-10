@@ -227,6 +227,12 @@ class TagsPage {
                 nameNote = this.testData[randomIndex].name;
                 await this.enterName(nameNote); 
             }
+        
+            let slugNote;
+            if ( slug === "max 191") {
+                slugNote = slug === "vacio" ? null :  this.testData[randomIndex].descripción_max;
+                await this.slugName(slugNote); 
+            }
 
           
         } catch (error) {

@@ -113,3 +113,32 @@ When('I fetch data from Mockaroo API {string} tags not allowed max 191 slug', as
     await tagsPage.getTestDataSet(apiUrl, 'GET');
     await tagsPage.crearTags('','','max 191');  
 });
+
+When('I click on expand button Meta Data', async function () {
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.expandMetaData();
+});
+
+When('I fill the meta title input', async function () {
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.enterMetaTitle();
+});
+
+
+When('I fill the meta description textarea', async function () {
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.enterMetaDescripcion();
+});
+
+When('I fill the canonical URL input', async function () {
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.enterMetaUrl();
+});
+
+
+When('I fetch data from Mockaroo API {string} tags meta data', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.crearTagsMetaData();  
+});

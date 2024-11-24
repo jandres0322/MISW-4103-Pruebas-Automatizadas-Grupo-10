@@ -196,6 +196,37 @@ class TagsPage {
         
     }
 
+    async selectTagFromList(name) {
+        const element = await this.getTagFromList(name);
+        await element.click();
+    }
+
+    async getTagFromList(name) {
+        return await this.driver.$(`[data-test-tag-name]=${name}`);
+    }
+
+    async editarTagsMetaData(name = '', descripcion = '', slug = '', title = '', url = '') {
+        
+        //lets grab a random index
+        const randomIndex = Math.floor(Math.random() * this.testData.length);
+        try {
+        
+            let nameNote;
+
+            if ( name === "vacio") {
+                nameNote = name === "vacio" ? null :  this.testData[randomIndex].string_peligrosos;
+                await this.enterName(nameNote); 
+            }
+
+          
+        } catch (error) {
+            console.error("Error en la creación de tags:", error);
+            throw error; 
+        }
+        
+        
+    }
+
 
 
 }

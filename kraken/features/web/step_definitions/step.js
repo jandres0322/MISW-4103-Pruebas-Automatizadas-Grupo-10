@@ -81,20 +81,6 @@ When ('I click Load file',async function(){
     await membersPage.launchLoadZone();
 })
 
-When ('I click pages', async function(){
-    const pagesPage  = new PagesPage(this.driver);
-    await pagesPage.navigateToPages();
-})
-
-When ('I click New Page', async function(){
-    const pagesPage  = new PagesPage(this.driver);
-    await pagesPage.clickOnNewPage()
-})
-
-When ('I write the page', async function(){
-    const pagesPage  = new PagesPage(this.driver);
-    await pagesPage.writePage()
-})
 
 Then ('I should not see copy link button', async function(){
     const pagesPage  = new PagesPage(this.driver);
@@ -104,10 +90,6 @@ Then ('I should not see copy link button', async function(){
     }
 })
 
-When ('I write title', async function(){
-    const pagesPage  = new PagesPage(this.driver);
-    await pagesPage.writeTitle()
-})
 
 
 

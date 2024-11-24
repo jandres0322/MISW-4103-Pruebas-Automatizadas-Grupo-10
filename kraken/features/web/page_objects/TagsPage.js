@@ -152,7 +152,7 @@ class TagsPage {
                 slugNote = this.testData[randomIndex].slug;
         
         let titleMeta;
-        
+
             if (title === "max 70" || title === "warning") {
                 titleMeta = title === "max 70" 
                     ? this.testData[randomIndex].descripción_max 
@@ -170,10 +170,13 @@ class TagsPage {
 
         let urlMeta;
 
-        if ( url === "warning") 
+        if (url === "warning") {
             urlMeta = this.testData[randomIndex].descripción;
-        else
+        } else if (url === "vacio") {
+            urlMeta = ""; // Asignar una cadena vacía
+        } else {
             urlMeta = this.testData[randomIndex].url;
+        }
 
         
     

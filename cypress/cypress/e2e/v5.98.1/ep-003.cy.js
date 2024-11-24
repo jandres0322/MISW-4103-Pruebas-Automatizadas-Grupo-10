@@ -53,4 +53,21 @@ describe("EP-003: Crear cuenta en Ghost con contraseña menor a 3 caracteres", (
     registerScreen.validateErrorPassword();
     registerScreen.validateErrorMain();
   });
+
+  it("Ejecución escenario - Escenario aleatorio", () => {
+    const data = {
+      site: faker.lorem.words(90),
+      name: faker.person.fullName(),
+      email: faker.internet.email(),
+      password: faker.internet.password()[0],
+    };
+    registerScreen.enterSiteTitle(data.site);
+    registerScreen.enterFullName(data.name);
+    registerScreen.enterEmailAddress(data.email);
+    registerScreen.enterPassword(data.password);
+    registerScreen.clickCreateAccount();
+    registerScreen.cleanForm();
+    registerScreen.validateErrorPassword();
+    registerScreen.validateErrorMain();
+  });
 });

@@ -21,4 +21,13 @@ export class ApiMockaroo {
       return response.body;
     })
   }
+
+  static dataEmptyCreatePage() {
+    return cy.request({
+      method: "GET",
+      url: `${baseUrlMockaroo}/post_empty_title.json?key=${apiKeyMockaroo}`,
+    }).then((response) => {
+      return response.body;
+    })
+  }
 }

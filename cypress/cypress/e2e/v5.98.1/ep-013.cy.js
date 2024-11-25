@@ -19,31 +19,30 @@ describe("EP-013: Escribir un post con todos los campos diligenciados agregando 
     dashboardScreen.clickCreateNewPost();
   });
 
-  // it("Ejecución escenario - Pool de datos a-priori", () => {
-  //   mockCreatePost.forEach((data) => {
-  //     createPostScreen.enterTitlePost(data.title);
-  //     createPostScreen.enterDescriptionPost(data.description);
-  //     createPostScreen.clickUploadImage();
-  //     createPostScreen.clickPageSettings();
-  //     createPostScreen.enterExcerptPost(data.excerpt);
-  //     createPostScreen.selectTag(data.tag);
-  //     createPostScreen.clickPageSettings();
-  //     createPostScreen.clickPublish();
-  //     createPostScreen.clickScheduledDropdown();
-  //     createPostScreen.clickSelectScheduled();
-  //     createPostScreen.clickFinalReview();
-  //     createPostScreen.clickConfirmCreatePost();
-  //     createPostScreen.clickCloseModal();
-  //     dashboardScreen.clickListPostScheduled();
-  //     listPostScreen.validateTitleListPage(data.title);
-  //     dashboardScreen.clickCreateNewPost();
-  //   });
-  // });
+  it("Ejecución escenario - Pool de datos a-priori", () => {
+    mockCreatePost.forEach((data) => {
+      createPostScreen.enterTitlePost(data.title);
+      createPostScreen.enterDescriptionPost(data.description);
+      createPostScreen.clickUploadImage();
+      createPostScreen.clickPageSettings();
+      createPostScreen.enterExcerptPost(data.excerpt);
+      createPostScreen.selectTag(data.tag);
+      createPostScreen.clickPageSettings();
+      createPostScreen.clickPublish();
+      createPostScreen.clickScheduledDropdown();
+      createPostScreen.clickSelectScheduled();
+      createPostScreen.clickFinalReview();
+      createPostScreen.clickConfirmCreatePost();
+      createPostScreen.clickCloseModal();
+      dashboardScreen.clickListPostScheduled();
+      listPostScreen.validateTitleListPage(data.title);
+      dashboardScreen.clickCreateNewPost();
+    });
+  });
 
   it("Ejecución escenario - Pool de datos aleatorio dinánico", () => {
     ApiMockaroo.dataCreatePostScheduled().then((data) => {
       const length = data.length;
-      const last = data[length - 1]["title"];
       data.forEach((item, i) => {
         createPostScreen.enterTitlePost(item.title);
         createPostScreen.enterDescriptionPost(item.description);

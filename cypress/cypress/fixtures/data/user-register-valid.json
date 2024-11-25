@@ -1,0 +1,21 @@
+[
+    {
+      "site": "Mi Sitio Ejemplo",
+      "name": "Juan Pérez",
+      "email": "juan.perez@example.com",
+      "password": "e6qDruUIh2d7HdP!"
+    },
+    {
+      "site": "Sitio Demo",
+      "name": "María López",
+      "email": "maria.lopez@example.com",
+      "password": "Secure#Pass46!"
+    },
+    {
+      "site": "Proyecto Fantástico",
+      "name": "Carlos García",
+      "email": "carlos.garcia@example.com",
+      "password": "MyPassword789!"
+    }
+  ]
+  

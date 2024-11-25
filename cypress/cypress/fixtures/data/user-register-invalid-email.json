@@ -1,0 +1,43 @@
+[
+    {
+      "site": "My Test Site",
+      "name": "John Doe",
+      "email": "invalid-email",
+      "password": "P@rC3r0s12345",
+      "errorMessage": "Invalid Email.",
+      "errorMessageMain": "Please fill out every field correctly to set up your site."
+    },
+    {
+      "site": "Demo Blog",
+      "name": "Jane Smith",
+      "email": "jane.smith@com",
+      "password": "P@rC3r0s12345",
+      "errorMessage": "Invalid Email.",
+      "errorMessageMain": "Please fill out every field correctly to set up your site."
+    },
+    {
+      "site": "Example Site",
+      "name": "Bob Johnson",
+      "email": "bob.johnson@.com",
+      "password": "P@rC3r0s12345",
+      "errorMessage": "Invalid Email.",
+      "errorMessageMain": "Please fill out every field correctly to set up your site."
+    },
+    {
+      "site": "Tech Blog",
+      "name": "Alice Brown",
+      "email": "alicebrown.com",
+      "password": "P@rC3r0s12345",
+      "errorMessage": "Invalid Email.", 
+      "errorMessageMain": "Please fill out every field correctly to set up your site."
+    },
+    {
+      "site": "Travel Journal",
+      "name": "Charlie Davis",
+      "email": "charlie@domain..com",
+      "password": "P@rC3r0s12345",
+      "errorMessage": "Invalid Email.",
+      "errorMessageMain": "Please fill out every field correctly to set up your site."
+    }
+  ]
+  

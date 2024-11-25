@@ -1,5 +1,6 @@
 const baseUrlMockaroo = Cypress.env("apirUrlMockaroo");
 const apiKeyMockaroo = Cypress.env("apiKeyMockaroo");
+const apiKeyMockaroo2 = Cypress.env("apiKeyMockaroo2");
 
 export class ApiMockaroo {
   static dataWrongRegisterUser() {
@@ -62,6 +63,28 @@ export class ApiMockaroo {
       .request({
         method: "GET",
         url: `${baseUrlMockaroo}/create_post.json?key=${apiKeyMockaroo}`,
+      })
+      .then((response) => {
+        return response.body;
+      });
+  }
+
+  static dataInvalidEmailRegisterUser() {
+    return cy
+      .request({
+        method: "GET",
+        url: `${baseUrlMockaroo}/user_register_invalid_email.json?key=${apiKeyMockaroo2}`,
+      })
+      .then((response) => {
+        return response.body;
+      });
+  }
+  
+  static dataValidRegisterUser() {
+    return cy
+      .request({
+        method: "GET",
+        url: `${baseUrlMockaroo}/user_register_valid.json?key=${apiKeyMockaroo2}`,
       })
       .then((response) => {
         return response.body;

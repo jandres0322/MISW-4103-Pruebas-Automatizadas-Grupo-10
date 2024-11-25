@@ -1,0 +1,23 @@
+[
+    {
+      "title": "Post de prueba",
+      "description": "Contenido original del post.",
+      "excerpt": "Resumen del post original.",
+      "tag": "tag1",
+      "titleEdit": "Post editado de prueba",
+      "descriptionEdit": "Contenido editado del post.",
+      "excerptEdit": "Resumen del post editado.",
+      "imageUnsplash": "https://images.unsplash.com/photo-12345"
+    },
+    {
+      "title": "Otro post",
+      "description": "Contenido de otro post original.",
+      "excerpt": "Resumen de otro post original.",
+      "tag": "tag2",
+      "titleEdit": "Otro post editado",
+      "descriptionEdit": "Contenido de otro post editado.",
+      "excerptEdit": "Resumen de otro post editado.",
+      "imageUnsplash": "https://images.unsplash.com/photo-67890"
+    }
+  ]
+  

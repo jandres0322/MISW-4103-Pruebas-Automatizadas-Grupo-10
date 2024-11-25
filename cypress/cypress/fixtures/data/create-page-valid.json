@@ -1,0 +1,21 @@
+[
+    {
+      "title": "Mi primera página",
+      "description": "Esta es la descripción de mi primera página de prueba en Ghost.",
+      "tag": "tag1",
+      "excerpt": "Este es un breve resumen para mi primera página."
+    },
+    {
+      "title": "Página de ejemplo",
+      "description": "Contenido descriptivo para la página de ejemplo en Ghost.",
+      "tag": "tag2",
+      "excerpt": "Resumen de la página de ejemplo."
+    },
+    {
+      "title": "Página de demostración",
+      "description": "Descripción detallada para la página de demostración.",
+      "tag": "demo-tag",
+      "excerpt": "Resumen breve de la página de demostración."
+    }
+  ]
+  

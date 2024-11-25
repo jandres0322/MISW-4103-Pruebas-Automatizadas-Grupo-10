@@ -1,7 +1,7 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
 const {PostsPage} = require('../page_objects/PostsPage');
 const assert = require('assert');
-const PagesPage = require('kraken-node/bin/features/web/page_objects/PagesPage');
+
 
 When('I click on create post', async function(){
     let element = await this.driver.$('a[href="#/editor/post/"]');

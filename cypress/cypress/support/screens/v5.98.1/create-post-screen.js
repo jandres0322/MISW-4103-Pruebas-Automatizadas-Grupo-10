@@ -39,7 +39,7 @@ class CreatePostScreen {
   }
 
   enterExcerptPost(excerpt) {
-    this.elements.excerptPostInput().type(excerpt);
+    this.elements.excerptPostInput().type(excerpt, { force: true});
   }
 
   selectTag(tag) {

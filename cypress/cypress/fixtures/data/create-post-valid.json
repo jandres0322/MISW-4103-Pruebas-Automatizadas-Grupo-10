@@ -1,0 +1,21 @@
+[
+    {
+      "title": "Mi primer post",
+      "description": "Este es el contenido de mi primer post de prueba.",
+      "excerpt": "Resumen breve del post.",
+      "tag": "tag1"
+    },
+    {
+      "title": "Post de ejemplo",
+      "description": "Contenido para el post de ejemplo en Ghost.",
+      "excerpt": "Resumen del post de ejemplo.",
+      "tag": "tag2"
+    },
+    {
+      "title": "Post de demostración",
+      "description": "Descripción detallada para el post de demostración.",
+      "excerpt": "Breve resumen de la demostración.",
+      "tag": "demo-tag"
+    }
+  ]
+  

@@ -7,7 +7,8 @@ class ListPageScreen {
     titleListPage: () => cy.get(".gh-content-entry-title")
   }
 
-  validateTitleListPage(title) {
+  validateTitleListPage() {
+    const title = "(Untitled)";
     this.elements.titleListPage().contains(title);
   }
 

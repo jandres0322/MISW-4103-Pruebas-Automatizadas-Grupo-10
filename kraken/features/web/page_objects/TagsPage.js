@@ -205,7 +205,7 @@ class TagsPage {
         return await this.driver.$(`[data-test-tag-name]=${name}`);
     }
 
-    async editarTagsMetaData(name = '', descripcion = '', slug = '', title = '', url = '') {
+    async editarTagsMetaData(name = '', descripcion = '', slug = '', title = '', url = '', metadescripcion = '') {
         
         //lets grab a random index
         const randomIndex = Math.floor(Math.random() * this.testData.length);
@@ -242,11 +242,46 @@ class TagsPage {
         }
 
 
+
+        
+
+
         let titleMeta;
 
             if ( title === "vacio") {
                 titleMeta = title === "vacio" ? null :  this.testData[randomIndex].name;
                 await this.enterMetaTitle(titleMeta); 
+            }
+
+            if ( title === "max 300") {
+                titleMeta =  this.testData[randomIndex].descripción_max;
+                await this.enterMetaTitle(titleMeta); 
+            }
+
+        let descripcionMeta;
+        
+            if ( metadescripcion === "max 500") {
+                descripcionMeta = this.testData[randomIndex].descripción_max;
+                await this.enterMetaDescripcion(descripcionMeta); 
+            }
+
+            if ( metadescripcion === "vacio") {
+                descripcionMeta = null;
+                await this.enterMetaDescripcion(descripcionMeta); 
+            }
+
+            if ( metadescripcion === "") {
+                descripcionMeta = this.testData[randomIndex].descripción;
+                await this.enterMetaDescripcion(descripcionMeta); 
+            }
+
+
+
+            let urlNote;
+
+            if ( url === "vacio") {
+                urlNote = url === "vacio" ? null :  this.testData[randomIndex].name;
+                await this.enterMetaUrl(urlNote); 
             }
             
 

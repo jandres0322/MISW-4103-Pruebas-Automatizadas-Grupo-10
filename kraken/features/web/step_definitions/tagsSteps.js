@@ -286,3 +286,29 @@ When('I fetch data from Mockaroo API {string} tags meta data edit url valid', as
     await tagsPage.getTestDataSet(apiUrl, 'GET');
     await tagsPage.editarTagsMetaData('otro','otro','','','','');  
 });
+
+
+When('I fetch data from faker aleatoreo tags', async function () {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.crearTagsFaker();  
+});
+
+When('I fetch data from faker aleatoreo tags not name', async function () {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.crearTagsFaker('vacio');  
+});
+
+
+When('I fetch data from faker aleatoreo tags slug vacio', async function () {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.crearTagsFaker('','','vacio');  
+});
+
+When('I fetch data from faker aleatoreo tags note vacio', async function () {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.crearTagsFaker('','vacio','');  
+});

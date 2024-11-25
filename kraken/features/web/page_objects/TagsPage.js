@@ -274,6 +274,15 @@ class TagsPage {
                 descripcionMeta = this.testData[randomIndex].descripción;
                 await this.enterMetaDescripcion(descripcionMeta); 
             }
+
+
+
+            let urlNote;
+
+            if ( url === "vacio") {
+                urlNote = url === "vacio" ? null :  this.testData[randomIndex].name;
+                await this.enterMetaUrl(urlNote); 
+            }
             
 
           

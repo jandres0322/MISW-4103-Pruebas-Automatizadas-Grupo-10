@@ -264,6 +264,11 @@ class TagsPage {
                 descripcionMeta = this.testData[randomIndex].descripción_max;
                 await this.enterMetaDescripcion(descripcionMeta); 
             }
+
+            if ( metadescripcion === "") {
+                descripcionMeta = this.testData[randomIndex].descripción;
+                await this.enterMetaDescripcion(descripcionMeta); 
+            }
             
 
           

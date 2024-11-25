@@ -56,4 +56,15 @@ export class ApiMockaroo {
         return response.body;
       });
   }
+
+  static dataCreatePostScheduled() {
+    return cy
+      .request({
+        method: "GET",
+        url: `${baseUrlMockaroo}/create_post.json?key=${apiKeyMockaroo}`,
+      })
+      .then((response) => {
+        return response.body;
+      });
+  }
 }

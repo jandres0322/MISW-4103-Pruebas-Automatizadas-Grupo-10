@@ -90,4 +90,16 @@ export class ApiMockaroo {
         return response.body;
       });
   }
+
+  static dataValidCreatePage() {
+    return cy
+      .request({
+        method: "GET",
+        url: `${baseUrlMockaroo}/create_page_valid.json?key=${apiKeyMockaroo2}`,
+      })
+      .then((response) => {
+        return response.body;
+      });
+  }
+  
 }

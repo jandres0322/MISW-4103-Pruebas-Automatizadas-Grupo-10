@@ -1,4 +1,5 @@
 const assert = require('assert');
+const { faker } = require("@faker-js/faker");
 
 class TagsPage {
     constructor(driver) {
@@ -310,6 +311,32 @@ class TagsPage {
     }
 
 
+    async crearTagsFaker(name = '', descripcion = '', slug = '') {
+        
+        const obtenerValor = (tipo, longitud = 500) => {
+            switch (tipo) {
+                case 'vacio': return ''; 
+                case 'warning': return faker.lorem.words(5) + ' <script>alert("XSS")</script>'; 
+                case 'max 500': return faker.lorem.paragraph(3).substring(0, longitud); 
+                case 'max 191': return faker.lorem.words(30).substring(0, 191); 
+                default: return faker.lorem.words(10); 
+            }
+        };
+    
+        try {
+           
+            const nameNote = obtenerValor(name, 191); 
+            const textNote = obtenerValor(descripcion, 500); 
+            const slugNote = obtenerValor(slug, 191); 
+    
+            await this.enterName(nameNote);
+            await this.slugName(slugNote);
+            await this.enterMemberNote(textNote);
+        } catch (error) {
+            console.error("Error en la creación de tags:", error);
+            throw error;
+        }
+    }
 
 }
 module.exports = TagsPage;

@@ -264,3 +264,11 @@ When('I fetch data from Mockaroo API {string} tags meta data edit vacio meta url
     await tagsPage.getTestDataSet(apiUrl, 'GET');
     await tagsPage.editarTagsMetaData('otro','otro','','','vacio','');  
 });
+
+
+When('I fetch data from Mockaroo API {string} tags meta data edit url not valid meta url', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.editarTagsMetaData('otro','otro','','','not valid','');  
+});

@@ -234,3 +234,11 @@ When('I fetch data from Mockaroo API {string} tags meta data edit vacio title', 
     await tagsPage.getTestDataSet(apiUrl, 'GET');
     await tagsPage.editarTagsMetaData('otro','otro','','vacio','');  
 });
+
+
+When('I fetch data from Mockaroo API {string} tags meta data edit not allowed max 300 meta title', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.editarTagsMetaData('otro','otro','','max 300','');  
+});

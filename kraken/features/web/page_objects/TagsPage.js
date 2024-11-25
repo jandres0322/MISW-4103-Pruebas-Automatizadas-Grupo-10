@@ -234,6 +234,22 @@ class TagsPage {
                 await this.slugName(slugNote); 
             }
 
+            let textNote;
+
+        if ( descripcion === "max 500") {
+            textNote = this.testData[randomIndex].descripción_max;
+            await this.enterMemberNote(textNote); 
+        }
+
+
+        let titleMeta;
+
+            if ( title === "vacio") {
+                titleMeta = title === "vacio" ? null :  this.testData[randomIndex].name;
+                await this.enterMetaTitle(titleMeta); 
+            }
+            
+
           
         } catch (error) {
             console.error("Error en la creación de tags:", error);

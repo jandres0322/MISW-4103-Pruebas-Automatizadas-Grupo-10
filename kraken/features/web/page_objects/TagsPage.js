@@ -248,6 +248,11 @@ class TagsPage {
                 titleMeta = title === "vacio" ? null :  this.testData[randomIndex].name;
                 await this.enterMetaTitle(titleMeta); 
             }
+
+            if ( title === "max 300") {
+                titleMeta =  this.testData[randomIndex].descripción_max;
+                await this.enterMetaTitle(titleMeta); 
+            }
             
 
           

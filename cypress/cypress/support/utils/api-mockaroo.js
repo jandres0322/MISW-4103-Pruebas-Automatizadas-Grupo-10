@@ -45,4 +45,15 @@ export class ApiMockaroo {
         return response.body;
       });
   }
+
+  static dataCreateTagSuccess() {
+    return cy
+      .request({
+        method: "GET",
+        url: `${baseUrlMockaroo}/create_tag_success.json?key=${apiKeyMockaroo}`,
+      })
+      .then((response) => {
+        return response.body;
+      });
+  }
 }

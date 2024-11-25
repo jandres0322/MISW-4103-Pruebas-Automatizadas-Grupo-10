@@ -1,0 +1,62 @@
+[
+  {
+    "name": "n/a",
+    "color": "#246db8",
+    "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+    "slug": "/sem/fusce.png"
+  },
+  {
+    "name": "Health Care",
+    "color": "#da9c0e",
+    "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+    "slug": "/at/feugiat/non/pretium/quis/lectus.js"
+  },
+  {
+    "name": "n/a",
+    "color": "#bf2d91",
+    "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.\n\nDuis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.",
+    "slug": "/augue/vestibulum/rutrum/rutrum/neque/aenean.jpg"
+  },
+  {
+    "name": "Consumer Services",
+    "color": "#53f05b",
+    "description": "In congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
+    "slug": "/aenean/sit/amet/justo/morbi/ut/odio.jsp"
+  },
+  {
+    "name": "Basic Industries",
+    "color": "#1d9253",
+    "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "slug": "/urna/ut/tellus/nulla/ut.aspx"
+  },
+  {
+    "name": "Finance",
+    "color": "#8c365a",
+    "description": "Sed ante. Vivamus tortor. Duis mattis egestas metus.",
+    "slug": "/faucibus/orci/luctus/et/ultrices/posuere.html"
+  },
+  {
+    "name": "Health Care",
+    "color": "#567df4",
+    "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+    "slug": "/aliquam/non/mauris/morbi.json"
+  },
+  {
+    "name": "Technology",
+    "color": "#4bbf17",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.",
+    "slug": "/pretium/iaculis/justo/in.json"
+  },
+  {
+    "name": "Capital Goods",
+    "color": "#a6df81",
+    "description": "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+    "slug": "/quis/odio/consequat.png"
+  },
+  {
+    "name": "Technology",
+    "color": "#ab2de6",
+    "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.\n\nProin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+    "slug": "/amet.png"
+  }
+]

@@ -265,6 +265,11 @@ class TagsPage {
                 await this.enterMetaDescripcion(descripcionMeta); 
             }
 
+            if ( metadescripcion === "vacio") {
+                descripcionMeta = null;
+                await this.enterMetaDescripcion(descripcionMeta); 
+            }
+
             if ( metadescripcion === "") {
                 descripcionMeta = this.testData[randomIndex].descripción;
                 await this.enterMetaDescripcion(descripcionMeta); 

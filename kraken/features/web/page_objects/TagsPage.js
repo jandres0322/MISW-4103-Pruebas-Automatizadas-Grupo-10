@@ -283,6 +283,11 @@ class TagsPage {
                 urlNote = url === "vacio" ? null :  this.testData[randomIndex].name;
                 await this.enterMetaUrl(urlNote); 
             }
+
+            if ( url === "not valid") {
+                urlNote = this.testData[randomIndex].name;
+                await this.enterMetaUrl(urlNote); 
+            }
             
 
           

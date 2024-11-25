@@ -272,3 +272,17 @@ When('I fetch data from Mockaroo API {string} tags meta data edit url not valid 
     await tagsPage.getTestDataSet(apiUrl, 'GET');
     await tagsPage.editarTagsMetaData('otro','otro','','','not valid','');  
 });
+
+When('I fetch data from Mockaroo API {string} tags meta data edit url not valid meta url long', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.editarTagsMetaData('otro','otro','','','long','');  
+});
+
+When('I fetch data from Mockaroo API {string} tags meta data edit url valid', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.editarTagsMetaData('otro','otro','','','','');  
+});

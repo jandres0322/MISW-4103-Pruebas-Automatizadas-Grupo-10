@@ -288,6 +288,16 @@ class TagsPage {
                 urlNote = this.testData[randomIndex].name;
                 await this.enterMetaUrl(urlNote); 
             }
+
+            if ( url === "long") {
+                urlNote = this.testData[randomIndex].url_long;
+                await this.enterMetaUrl(urlNote); 
+            }
+
+            if ( url === "") {
+                urlNote = this.testData[randomIndex].url;
+                await this.enterMetaUrl(urlNote); 
+            }
             
 
           

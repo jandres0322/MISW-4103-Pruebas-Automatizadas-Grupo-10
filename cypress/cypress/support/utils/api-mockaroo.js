@@ -101,5 +101,15 @@ export class ApiMockaroo {
         return response.body;
       });
   }
-  
+
+  static dataCreateTagInvalidColor() {
+    return cy
+      .request({
+        method: "GET",
+        url: `${baseUrlMockaroo}/data_create_tag_invalid_color.json?key=${apiKeyMockaroo2}`,
+      })
+      .then((response) => {
+        return response.body;
+      });
+    }  
 }

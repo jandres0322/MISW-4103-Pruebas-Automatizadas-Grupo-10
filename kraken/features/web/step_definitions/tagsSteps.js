@@ -219,3 +219,10 @@ When('I fetch data from Mockaroo API {string} tags edit mayor 191 slug', async f
     await tagsPage.getTestDataSet(apiUrl, 'GET');
     await tagsPage.editarTagsMetaData('otro','','max 191','','');  
 });
+
+When('I fetch data from Mockaroo API {string} tags edit mayor 500 descrpcion', async function (apiUrl) {
+    
+    const tagsPage = new TagsPage(this.driver);
+    await tagsPage.getTestDataSet(apiUrl, 'GET');
+    await tagsPage.editarTagsMetaData('otro','max 500','','','');  
+});

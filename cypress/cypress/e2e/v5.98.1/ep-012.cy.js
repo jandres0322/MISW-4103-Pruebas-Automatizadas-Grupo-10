@@ -3,7 +3,9 @@ const dashboardScreen = require("../../support/screens/v5.98.1/dashboard-screen"
 const createPostScreen = require("../../support/screens/v5.98.1/create-post-screen");
 const listPostScreen = require("../../support/screens/v5.98.1/list-post-screen");
 const MakeScreenShot = require("../../support/utils/make-screenshot");
-
+const mockCreatePostValid = require("../../fixtures/data/create-post-valid.json");
+const { ApiMockaroo } = require("../../support/utils/api-mockaroo");
+const { faker } = require("@faker-js/faker");
 
 describe("EP-012: Crear un post con todos los campos diligenciados", () => {
   beforeEach(() => {
@@ -11,42 +13,97 @@ describe("EP-012: Crear un post con todos los campos diligenciados", () => {
     cy.visit(Cypress.env("apiUrl"));
   });
 
-  it("Ejecución", () => {
+  it("Ejecución escenario - Pool de datos a-priori", () => {
     const makeScreenShot = new MakeScreenShot(Cypress.env("ghostVersionReleaseCandidate"), Cypress.currentTest.titlePath);
 
-    cy.log("GIVEN: Cargando datos de usuario e ingresando al dashboard");
-    cy.fixture("user-login").then((data) => {
+    cy.fixture("user-login").then((loginData) => {
       makeScreenShot.execute("beforeLogin");
-      loginScreen.enterEmail(data.userLogin.email);
-      loginScreen.enterPassword(data.userLogin.password);
+      loginScreen.enterEmail(loginData.userLogin.email);
+      loginScreen.enterPassword(loginData.userLogin.password);
       loginScreen.clickSubmit();
-      makeScreenShot.execute("afterLogin");
       dashboardScreen.validateUrlDashboard();
-      dashboardScreen.validateTitleSite(data.userLogin.site);
-      makeScreenShot.execute("validateDashboard");
-      cy.wait(2000);
       dashboardScreen.clickCreateNewPost();
-      makeScreenShot.execute("createPostScreen");
 
-      cy.log("WHEN: Escribiendo un post con todos los campos diligenciados");
-      cy.fixture("create-post").then((data) => {
-        createPostScreen.enterTitlePost(data.createPostValid.title);
-        createPostScreen.enterDescriptionPost(data.createPostValid.description);
+      mockCreatePostValid.forEach((data) => {
+        createPostScreen.enterTitlePost(data.title);
+        createPostScreen.enterDescriptionPost(data.description);
         createPostScreen.clickPageSettings();
-        createPostScreen.enterExcerptPost(data.createPostValid.excerpt);
-        createPostScreen.selectTag(data.createPostValid.tag);
+        createPostScreen.enterExcerptPost(data.excerpt);
+        createPostScreen.selectTag(data.tag);
         createPostScreen.clickPageSettings();
         createPostScreen.clickPublish();
-        makeScreenShot.execute("afterCreatePost");
         createPostScreen.clickFinalReview();
-        makeScreenShot.execute("finalReview");
         createPostScreen.clickConfirmCreatePost();
         createPostScreen.clickCloseModal();
 
         cy.log("THEN: Se debe validar que el post se haya creado correctamente");
-        listPostScreen.validateTitleListPage(data.createPostValid.title);
-        makeScreenShot.execute("validateListPost");
+        listPostScreen.validateTitleListPage(data.title);
       });
-    })
+    });
+  });
+
+  it("Ejecución escenario - Pool de datos aleatorio dinámico", () => {
+    const makeScreenShot = new MakeScreenShot(Cypress.env("ghostVersionReleaseCandidate"), Cypress.currentTest.titlePath);
+
+    cy.fixture("user-login").then((loginData) => {
+      makeScreenShot.execute("beforeLogin");
+      loginScreen.enterEmail(loginData.userLogin.email);
+      loginScreen.enterPassword(loginData.userLogin.password);
+      loginScreen.clickSubmit();
+      dashboardScreen.validateUrlDashboard();
+      dashboardScreen.clickCreateNewPost();
+
+      ApiMockaroo.dataCreatePostValid().then((data) => {
+        data.forEach((item) => {
+          createPostScreen.enterTitlePost(item.title);
+          createPostScreen.enterDescriptionPost(item.description);
+          createPostScreen.clickPageSettings();
+          createPostScreen.enterExcerptPost(item.excerpt);
+          createPostScreen.selectTag(item.tag);
+          createPostScreen.clickPageSettings();
+          createPostScreen.clickPublish();
+          createPostScreen.clickFinalReview();
+          createPostScreen.clickConfirmCreatePost();
+          createPostScreen.clickCloseModal();
+
+          cy.log("THEN: Se debe validar que el post se haya creado correctamente");
+          listPostScreen.validateTitleListPage(item.title);
+        });
+      });
+    });
+  });
+
+  it("Ejecución escenario - Escenario aleatorio", () => {
+    const makeScreenShot = new MakeScreenShot(Cypress.env("ghostVersionReleaseCandidate"), Cypress.currentTest.titlePath);
+
+    cy.fixture("user-login").then((loginData) => {
+      makeScreenShot.execute("beforeLogin");
+      loginScreen.enterEmail(loginData.userLogin.email);
+      loginScreen.enterPassword(loginData.userLogin.password);
+      loginScreen.clickSubmit();
+      dashboardScreen.validateUrlDashboard();
+      dashboardScreen.clickCreateNewPost();
+
+      const data = {
+        title: faker.lorem.words(5),
+        description: faker.lorem.words(50),
+        excerpt: faker.lorem.words(10),
+        tag: faker.lorem.word(),
+      };
+
+      createPostScreen.enterTitlePost(data.title);
+      createPostScreen.enterDescriptionPost(data.description);
+      createPostScreen.clickPageSettings();
+      createPostScreen.enterExcerptPost(data.excerpt);
+      createPostScreen.selectTag(data.tag);
+      createPostScreen.clickPageSettings();
+      createPostScreen.clickPublish();
+      createPostScreen.clickFinalReview();
+      createPostScreen.clickConfirmCreatePost();
+      createPostScreen.clickCloseModal();
+
+      cy.log("THEN: Se debe validar que el post se haya creado correctamente");
+      listPostScreen.validateTitleListPage(data.title);
+    });
   });
 });
